@@ -207,29 +207,31 @@ static void ble_stack_init(void)
  */
 static void power_manage(void)
 {
-    uint32_t err_code = sd_app_evt_wait();
-    APP_ERROR_CHECK(err_code);
+    //uint32_t err_code = sd_app_evt_wait();
+    //APP_ERROR_CHECK(err_code);
 		const uint32_t leds_list[LEDS_NUMBER] = LEDS_LIST;
+		//uint32_t gpio_state;	
+	  NRF_GPIO->OUTSET = 0xFF;
+	
 		//LEDS_CONFIGURE(LEDS_MASK);
-    LEDS_OFF(LEDS_MASK);
+    //LEDS_OFF(LEDS_MASK);
 		LEDS_INVERT(1 << leds_list[2]);  //turning blue on right led
 		LEDS_INVERT(1 << leds_list[0]);		//turning red on right led
 		//LEDS_INVERT(1 << leds_list[1]);  //turning green on right led
 		//LEDS_INVERT(1 << leds_list[4]);  //turning green on left led
-		//LEDS_INVERT(1 << leds_list[5]);  //turning blue on left led
+		LEDS_ON(1 << leds_list[5]);  //turning blue on left led
 		LEDS_INVERT(1 << leds_list[3]);		//turning red on left led	
 	
     // Toggle LEDs.
     //while (true)
     //{
-        for (int i = 5; i < LEDS_NUMBER; i++)
+        for (int i = 6; i < LEDS_NUMBER; i++)
         {
             LEDS_INVERT(1 << leds_list[i]);
-            nrf_delay_ms(300);
-						//LEDS_OFF(leds_list[i]);
-						//nrf_delay_ms(300);					
+            nrf_delay_ms(100);					
         }
-				LEDS_OFF(LEDS_MASK);
+				//LEDS_OFF(LEDS_MASK);
+				//LEDS_ON(LEDS_MASK);
     //}
    
 }
@@ -243,15 +245,24 @@ int main(void)
     // Initialize.
     
 	  APP_TIMER_INIT(APP_TIMER_PRESCALER, APP_TIMER_OP_QUEUE_SIZE, false);
-		err_code = bsp_init(BSP_INIT_LED, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), NULL);  
+		err_code = bsp_init(BSP_INIT_NONE, APP_TIMER_TICKS(100, APP_TIMER_PRESCALER), NULL);  
 		APP_ERROR_CHECK(err_code);
     ble_stack_init();
     advertising_init();
-	  LEDS_CONFIGURE(LEDS_MASK);
-    LEDS_ON(LEDS_MASK);
+	  //LEDS_CONFIGURE(LEDS_MASK);
+    //LEDS_ON(LEDS_MASK);
 		
 		advertising_start();
-
+	
+		// Configure the GPIOs as output
+	  for (int pin = 0; pin < 32; pin++)
+		{ 
+			if( (LEDS_MASK) & (1 << pin) )
+				{   
+					nrf_gpio_cfg_output(pin);
+				}
+		}
+		
     // Enter main loop.
     for ( ; ; )
     {
