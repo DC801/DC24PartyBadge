@@ -11,10 +11,10 @@ Rigado BMD-200 Bluetooth low energy based on a Nordic nRF51822
  - https://www.rigado.com/product/bmd-200/
 
  - 2 RGB LEDs
- - 10 red LEDs addressable in pairs
+ - 10 orange LEDs addressable in pairs
  - Single button
  - A MCP73831 LiPo battery charger
- - Spare pins
+ - Spare pins (I2C)
  - JTAG interface
  - Micro USB - for charging only
  - Kickass silkscreen
