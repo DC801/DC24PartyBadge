@@ -1,0 +1,48 @@
+Partlist
+
+Exported from AccessBadgeV1.0.sch at 4/29/2016 1:56 PM
+
+EAGLE Version 7.3.0 Copyright (c) 1988-2015 CadSoft
+
+Assembly variant: 
+
+Part     Value                    Device                    Package             Library                                Sheet
+
+C1       4.7uF                    CAP0603-CAP               0603-CAP            SparkFun                               1
+C2       4.7uF                    CAP0603-CAP               0603-CAP            SparkFun                               1
+C3       0.1uF                    C-EUC0201                 C0201               rcl                                    1
+C4       0.1uF                    C-EUC0201                 C0201               rcl                                    1
+C5       0.1uF                    C-EUC0201                 C0201               rcl                                    1
+D1       RED                      LEDCHIP-LED0603           CHIP-LED0603        adafruit                               1
+J1                                JST_2MM_MALE              JST-2-SMD           SparkFun-Connectors                    1
+JP1      USB_MICROB_10118192-0001 USB_MICROB_PLUGCONN-11752 USB-B-MICRO-SMD_V03 SparkFun-Connectors                    1
+JP2      M05X2PTH                 M05X2PTH                  AVR_ICSP            SparkFun                               1
+R1       105                      R-US_R0201                R0201               rcl                                    1
+R2       43                       R-US_R0201                R0201               rcl                                    1
+R3       43                       R-US_R0201                R0201               rcl                                    1
+R4       2.0k                     R-US_R0201                R0201               rcl                                    1
+R5       470                      R-US_R0201                R0201               rcl                                    1
+R11      105                      R-US_R0201                R0201               rcl                                    1
+R12      43                       R-US_R0201                R0201               rcl                                    1
+R20      43                       R-US_R0201                R0201               rcl                                    1
+R24      1.8k                     R-US_R0201                R0201               rcl                                    1
+R25      1.8k                     R-US_R0201                R0201               rcl                                    1
+R29      39                       R-US_R0201                R0201               rcl                                    1
+S1                                SWITCH-SPDTSMD2           SWITCH-SPDT-SMD     SparkFun-Electromechanical             1
+SLC      TACTILE_BUTTON           TACTILE_BUTTON            KXT131              C_K_BUTTONS                            1
+SPARE_1                           MA03-1                    MA03-1              con-lstb                               1
+U$1      RGB                      RGB                       0606                LITE_ON                                1
+U$9      RGB                      RGB                       0606                LITE_ON                                1
+U$15     PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U$21     PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U1                                BMD-200                   BMD-200             BMD-200                                1
+U2       TPS73233DBVT             TPS73233DBVT              SOT95P280X145-5N    Texas Instruments_By_element14_Batch_1 1
+U3       MCP73831                 MCP73831                  SOT23-5             SparkFun                               1
+U4       PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U5       PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U11      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U12      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U13      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U28      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U29      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
+U31      PICO-LED                 PICO-LED                  CHIP-LED0402        adafruit                               1
