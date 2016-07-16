@@ -10,14 +10,14 @@ Rigado BMD-200 Bluetooth low energy based on a Nordic nRF51822
  - 16MHz ARM® Cortex™ M0 CPU, 256kB of flash memory, 32kB RAM
  - https://www.rigado.com/product/bmd-200/
 
-2 RGB LEDs
-10 red LEDs addressable in pairs
-Single button
-A MCP73831 LiPo battery charger
-Spare pins
-JTAG interface
-Micro USB - for charging only
-Kickass silkscreen
+ - 2 RGB LEDs
+ - 10 red LEDs addressable in pairs
+ - Single button
+ - A MCP73831 LiPo battery charger
+ - Spare pins
+ - JTAG interface
+ - Micro USB - for charging only
+ - Kickass silkscreen
 
 # Software
 Environment is the nRFgo Studio and Keil
