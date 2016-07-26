@@ -1,7 +1,7 @@
 .\_build\retarget.o: RTE\nRF_Libraries\nRF51422_xxAC\retarget.c
 .\_build\retarget.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\_build\retarget.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\_build\retarget.o: C:\Users\Andrew\Documents\ble_peripheral\DC801_DC24\pca10028\s130\arm5\RTE\nRF_Drivers\nRF51422_xxAC\app_uart.h
+.\_build\retarget.o: C:\Users\Andrew\Documents\ble_peripheral\DC801_DC24PartyBadge\Software\pca10028\s130\arm5\RTE\nRF_Drivers\nRF51422_xxAC\app_uart.h
 .\_build\retarget.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\_build\retarget.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\util\app_util_platform.h
 .\_build\retarget.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFamilyPack\8.3.1\Device\Include\compiler_abstraction.h

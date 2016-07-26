@@ -15,6 +15,7 @@
 #define __CUSTOM_BOARD_H__
 
 #define LEDS_NUMBER    11
+#define ORANGE_LEDS_NUMBER	5
 
 #define LED_RED        0
 #define LED_GREEN      1
@@ -29,6 +30,7 @@
 #define LED_ORANGE4    27
 
 #define LEDS_LIST     { LED_RED, LED_GREEN, LED_BLUE, LED_RED1, LED_GREEN1, LED_BLUE1, LED_ORANGE, LED_ORANGE1, LED_ORANGE2, LED_ORANGE3, LED_ORANGE4}
+#define ORANGE_LEDS_LIST	{LED_ORANGE, LED_ORANGE1, LED_ORANGE2, LED_ORANGE3, LED_ORANGE4}
 
 #define BSP_LED_0      LED_RED
 #define BSP_LED_1      LED_GREEN
@@ -55,8 +57,10 @@
 #define BSP_LED_10_MASK (1<<BSP_LED_10)
 
 #define LEDS_MASK      (BSP_LED_0_MASK | BSP_LED_1_MASK | BSP_LED_2_MASK | BSP_LED_3_MASK | BSP_LED_4_MASK | BSP_LED_5_MASK | BSP_LED_6_MASK | BSP_LED_7_MASK | BSP_LED_8_MASK | BSP_LED_9_MASK | BSP_LED_10_MASK)
-/* all LEDs are lit when GPIO is high */
-//#define LEDS_INV_MASK  1  // default 0
+#define ORANGE_LEDS			(BSP_LED_6_MASK | BSP_LED_7_MASK | BSP_LED_8_MASK | BSP_LED_9_MASK | BSP_LED_10_MASK)
+#define ALL_RIGHT				(BSP_LED_0_MASK | BSP_LED_1_MASK | BSP_LED_2_MASK)
+#define ALL_LEFT				(BSP_LED_3_MASK | BSP_LED_4_MASK | BSP_LED_5_MASK)
+
 /* all LEDs are lit when GPIO is low */
 #define LEDS_INV_MASK  LEDS_MASK
 
@@ -79,26 +83,15 @@
                                       if ( (leds_mask) & (1 << pin) )   \
                                           nrf_gpio_cfg_output(pin); } while (0)
 
-//const uint16_t leds_list[LEDS_NUMBER] = LEDS_LIST;
 
-/**
- * @brief Function for application main entry.
- */
-/*int main(void)
-{
-    // Configure LED-pins as outputs.
-    LEDS_CONFIGURE(LEDS_MASK);
-
-    // Toggle LEDs.
-    while (true)
-    {
-        for (int i = 0; i < LEDS_NUMBER; i++)
-        {
-            LEDS_INVERT(1 << leds_list[i]);
-            nrf_delay_ms(500);
-        }
-    }
-}*/
+#define OFF			0
+#define RED			1
+#define BLUE		2
+#define GREEN		3
+#define	AQUA		4
+#define	PURPLE	5
+#define YELLOW	6
+#define	WHITE		7
 
 
 #define BUTTONS_NUMBER 1
@@ -115,11 +108,7 @@
 
 #define BUTTONS_MASK   0x00000801
 
-//#define RX_PIN_NUMBER  9
-//#define TX_PIN_NUMBER  10
-//#define CTS_PIN_NUMBER 2
-//#define RTS_PIN_NUMBER 3
-#define HWFC           true
+//#define HWFC           true
 
 //#define SPIM0_SCK_PIN       0     /**< SPI clock GPIO pin number ...**/
 #endif // __CUSTOM_BOARD_H__

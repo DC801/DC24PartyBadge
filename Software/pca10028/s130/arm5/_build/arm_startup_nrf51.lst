@@ -322,43 +322,44 @@ ARM Macro Assembler    Page 5
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\_build\arm_startup_nrf51.d -o.\_build\arm_startup_nrf51.o -IC:\U
-sers\Andrew\Documents\ble_peripheral\DC801_DC24\pca10028\s130\arm5\RTE -IC:\Use
+sers\Andrew\Documents\ble_peripheral\DC801_DC24PartyBadge\Software\pca10028\s13
 
 
 
 ARM Macro Assembler    Page 6 
 
 
-rs\Andrew\Documents\ble_peripheral\DC801_DC24\pca10028\s130\arm5\RTE\nRF_BLE\nR
-F51422_xxAC -IC:\Users\Andrew\Documents\ble_peripheral\DC801_DC24\pca10028\s130
-\arm5\RTE\nRF_Drivers\nRF51422_xxAC -IC:\Users\Andrew\Documents\ble_peripheral\
-DC801_DC24\pca10028\s130\arm5\RTE\nRF_Libraries\nRF51422_xxAC -IC:\Keil_v5\ARM\
-PACK\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nR
-F_BLE\4.0.0-2.alpha\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Device
-FamilyPack\8.3.1\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_D
-eviceFamilyPack\8.6.0\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\
-nRF_Drivers\4.0.0-2.alpha\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_
-Drivers\4.0.0-2.alpha\config -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Driv
-ers\4.0.0-2.alpha\delay -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4
-.0.0-2.alpha\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0
--2.alpha\hal -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.alph
-a\uart -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers_External\1.2.1-2.a
-lpha\segger_rtt -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Examples\11.0.0-2
-.alpha\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alph
-a\button -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\
-fifo -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\time
-r -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\uart -I
-C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\util -IC:\K
-eil_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_Common\2.0.0-2.alpha\softdev
-ice_handler -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_S130\2.0.0
--7.alpha\headers -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_S130\
-2.0.0-7.alpha\headers\nrf51 --predefine="__EVAL SETA 1" --predefine="__MICROLIB
- SETA 1" --predefine="__UVISION_VERSION SETA 520" --predefine="_RTE_ SETA 1" --
-predefine="NRF51 SETA 1" --predefine="BLE_STACK_SUPPORT_REQD SETA 1" --predefin
-e="S130 SETA 1" --predefine="BOARD_CUSTOM SETA 1" --predefine="NRF_LOG_USES_UAR
-T SETA 0" --predefine="SOFTDEVICE_PRESENT SETA 1" --predefine="NRF51 SETA 1" --
-predefine="SWI_DISABLE0 SETA 1" --list=.\_build\arm_startup_nrf51.lst RTE\Devic
-e\nRF51422_xxAC\arm_startup_nrf51.s
+0\arm5\RTE -IC:\Users\Andrew\Documents\ble_peripheral\DC801_DC24PartyBadge\Soft
+ware\pca10028\s130\arm5\RTE\nRF_BLE\nRF51422_xxAC -IC:\Users\Andrew\Documents\b
+le_peripheral\DC801_DC24PartyBadge\Software\pca10028\s130\arm5\RTE\nRF_Drivers\
+nRF51422_xxAC -IC:\Users\Andrew\Documents\ble_peripheral\DC801_DC24PartyBadge\S
+oftware\pca10028\s130\arm5\RTE\nRF_Libraries\nRF51422_xxAC -IC:\Keil_v5\ARM\PAC
+K\ARM\CMSIS\4.5.0\CMSIS\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_B
+LE\4.0.0-2.alpha\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_DeviceFam
+ilyPack\8.3.1\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Devi
+ceFamilyPack\8.6.0\Device\Include -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF
+_Drivers\4.0.0-2.alpha\common -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Dri
+vers\4.0.0-2.alpha\config -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers
+\4.0.0-2.alpha\delay -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.
+0-2.alpha\gpiote -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.
+alpha\hal -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.alpha\u
+art -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers_External\1.2.1-2.alph
+a\segger_rtt -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Examples\11.0.0-2.al
+pha\bsp -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\b
+utton -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\fif
+o -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\timer -
+IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\uart -IC:\
+Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\util -IC:\Keil
+_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_Common\2.0.0-2.alpha\softdevice
+_handler -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_S130\2.0.0-7.
+alpha\headers -IC:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_SoftDevice_S130\2.0
+.0-7.alpha\headers\nrf51 --predefine="__EVAL SETA 1" --predefine="__MICROLIB SE
+TA 1" --predefine="__UVISION_VERSION SETA 520" --predefine="_RTE_ SETA 1" --pre
+define="NRF51 SETA 1" --predefine="BLE_STACK_SUPPORT_REQD SETA 1" --predefine="
+S130 SETA 1" --predefine="BOARD_CUSTOM SETA 1" --predefine="NRF_LOG_USES_UART S
+ETA 0" --predefine="SOFTDEVICE_PRESENT SETA 1" --predefine="NRF51 SETA 1" --pre
+define="SWI_DISABLE0 SETA 1" --list=.\_build\arm_startup_nrf51.lst RTE\Device\n
+RF51422_xxAC\arm_startup_nrf51.s
 
 
 

@@ -22,7 +22,6 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "nrf_gpiote.h"
 #include "ble_advdata.h"
 #include "nordic_common.h"
 #include "softdevice_handler.h"
@@ -64,8 +63,6 @@
 #define APP_EDDYSTONE_TLM_TEMPERATURE   0x0F, 0x00                        /**< Mock value. Temperature [C]. Signed 8.8 fixed-point notation. */
 #define APP_EDDYSTONE_TLM_ADV_COUNT     0x00, 0x00, 0x00, 0x00            /**< Running count of advertisements of all types since power-up or reboot. */
 #define APP_EDDYSTONE_TLM_SEC_COUNT     0x00, 0x00, 0x00, 0x00            /**< Running count in 0.1 s resolution since power-up or reboot. */
-
-#define GPIOTE_CHANNEL_0 0  //set button to zero?
 
 #define DEAD_BEEF                       0xDEADBEEF                        /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
@@ -205,205 +202,38 @@ static void ble_stack_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
-/**
- * @brief Function for lighting LEDs.
- */
-static void eyes(uint32_t LEFT_EYE, uint32_t RIGHT_EYE)
-{
-	
-	switch(LEFT_EYE)
-	{
-		case RED :
-			LEDS_OFF(ALL_LEFT);				// turn off all LEDs
-			LEDS_ON(BSP_LED_3_MASK);	// turn on red LED
-			break;
-		case BLUE :
-			LEDS_OFF(ALL_LEFT);				// turn off all LEDs
-			LEDS_ON(BSP_LED_5_MASK);	// turn on blue LED
-			break;
-		case GREEN :
-			LEDS_OFF(ALL_LEFT);				// turn off all LEDs
-			LEDS_ON(BSP_LED_4_MASK);	// turn on green LED
-			break;
-		case AQUA :
-			LEDS_ON(ALL_LEFT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_3_MASK);	// turn off red LED
-			break;
-		case PURPLE :
-			LEDS_ON(ALL_LEFT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_4_MASK);	// turn off green LED
-			break;
-		case YELLOW :
-			LEDS_ON(ALL_LEFT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_5_MASK);	// turn off blue LED
-			break;
-		case WHITE :
-			LEDS_ON(ALL_LEFT);				// turn on all LEDs
-			break;
-		default :
-			LEDS_OFF(ALL_LEFT);				// turn off all LEDs
-	}
-	
-	switch(RIGHT_EYE)
-	{
-		case RED :
-			LEDS_OFF(ALL_RIGHT);			// turn off all LEDs
-			LEDS_ON(BSP_LED_0_MASK);	// turn on red LED
-			break;
-		case BLUE :
-			LEDS_OFF(ALL_RIGHT);			// turn off all LEDs
-			LEDS_ON(BSP_LED_2_MASK);	// turn on blue LED
-			break;
-		case GREEN :
-			LEDS_OFF(ALL_RIGHT);			// turn off all LEDs
-			LEDS_ON(BSP_LED_1_MASK);	// turn on green LED
-			break;
-		case AQUA :
-			LEDS_ON(ALL_RIGHT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_0_MASK);	// turn off red LED
-			break;
-		case PURPLE :
-			LEDS_ON(ALL_RIGHT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_1_MASK);	// turn off green LED
-			break;
-		case YELLOW :
-			LEDS_ON(ALL_RIGHT);				// turn on all LEDs
-			LEDS_OFF(BSP_LED_2_MASK);	// turn off blue LED
-			break;
-		case WHITE :
-			LEDS_ON(ALL_RIGHT);				// turn on all LEDs
-			break;
-		default :
-			LEDS_OFF(ALL_RIGHT);
-	}
-}
-
-#define VBAT_MAX_IN_MV                  3300
-
-uint8_t battery_level_get(void)
-{
-	// Configure ADC
-	NRF_ADC->CONFIG     = (ADC_CONFIG_RES_8bit                        << ADC_CONFIG_RES_Pos)     |
-												(ADC_CONFIG_INPSEL_SupplyOneThirdPrescaling << ADC_CONFIG_INPSEL_Pos)  |
-												(ADC_CONFIG_REFSEL_VBG                      << ADC_CONFIG_REFSEL_Pos)  |
-												(ADC_CONFIG_PSEL_Disabled                   << ADC_CONFIG_PSEL_Pos)    |
-												(ADC_CONFIG_EXTREFSEL_None                  << ADC_CONFIG_EXTREFSEL_Pos);
-	NRF_ADC->EVENTS_END = 0;
-	NRF_ADC->ENABLE     = ADC_ENABLE_ENABLE_Enabled;
-
-	NRF_ADC->EVENTS_END  = 0;    // Stop any running conversions.
-	NRF_ADC->TASKS_START = 1;
-
-	while (!NRF_ADC->EVENTS_END)
-	{
-	}
-
-	uint16_t vbg_in_mv = 1200;
-	uint8_t adc_max = 255;
-	uint16_t vbat_current_in_mv = (NRF_ADC->RESULT * 3 * vbg_in_mv) / adc_max;
-
-	NRF_ADC->EVENTS_END     = 0;
-	NRF_ADC->TASKS_STOP     = 1;
-
-	return (uint8_t) ((vbat_current_in_mv * 100) / VBAT_MAX_IN_MV);
-}
 
 /**@brief Function for doing power management.
  */
 static void power_manage(void)
 {
+    //uint32_t err_code = sd_app_evt_wait();
+    //APP_ERROR_CHECK(err_code);
 		const uint32_t leds_list[LEDS_NUMBER] = LEDS_LIST;
-		const uint32_t orange_leds_list[ORANGE_LEDS_NUMBER] = ORANGE_LEDS_LIST;
-
-		LEDS_OFF(LEDS_MASK);															// turn off all LEDs
+		//uint32_t gpio_state;	
+	  NRF_GPIO->OUTSET = 0xFF;
 	
-		eyes(RED, RED);																// turn both eyes red
+		//LEDS_CONFIGURE(LEDS_MASK);
+    //LEDS_OFF(LEDS_MASK);
+		LEDS_INVERT(1 << leds_list[2]);  //turning blue on right led
+		LEDS_INVERT(1 << leds_list[0]);		//turning red on right led
+		//LEDS_INVERT(1 << leds_list[1]);  //turning green on right led
+		//LEDS_INVERT(1 << leds_list[4]);  //turning green on left led
+		LEDS_ON(1 << leds_list[5]);  //turning blue on left led
+		LEDS_INVERT(1 << leds_list[3]);		//turning red on left led	
 	
-	
-	// This function cycles through the orange LEDs clockwise and turns them on one at a time
-			for (int j = 0; j <2; j++){											// loop twice
-        for (int i = 0; i < ORANGE_LEDS_NUMBER; i++)	// loop for all orange LEDs
+    // Toggle LEDs.
+    //while (true)
+    //{
+        for (int i = 6; i < LEDS_NUMBER; i++)
         {
-						LEDS_ON(1 << orange_leds_list[i]);				// turn on indexed orange LED
-            nrf_delay_ms(150);												// delay 150ms
-						LEDS_OFF(1 << orange_leds_list[i]);				// turn off indexed orange LED	
+            LEDS_INVERT(1 << leds_list[i]);
+            nrf_delay_ms(100);					
         }
-				eyes(GREEN,GREEN);															// turn both eyes green
-			}
-				
-				nrf_delay_ms(150);														// delay 150ms
-				eyes(AQUA,AQUA);													// turn both eyes aqua
-
-			
-	// This function turns on the LEDs clockwise one at a time and leaves them on
-				for (int i = 0; i < ORANGE_LEDS_NUMBER; i++)	// loop for all orange LEDs
-        {
-						LEDS_ON(1 << orange_leds_list[i]);				// turn on indexed orange LED
-            nrf_delay_ms(250);												// delay 250ms
-        }
-				
-	// This function turns off the LEDs CCW one at a time
-				for (int i = ORANGE_LEDS_NUMBER - 1; i >= 0; i--)	// loop for all orange LEDs
-        {
-						LEDS_OFF(1 << orange_leds_list[i]);				// turn off indexed orange LED
-            nrf_delay_ms(250);												// delay 250ms
-        }
-				
-				eyes(RED,OFF);								// turn on left eye only
-				LEDS_ON(1 << orange_leds_list[1]); //turn on bottom left orange LEDs
-				LEDS_ON(1 << orange_leds_list[4]); //turn on bottom Right orange LEDs
-				nrf_delay_ms(400);						// delay 400ms
-				
-	// This function illuminates the eyes red alternating on and off
-				for (int i = 4; i > 0; i--)		// loop 4 times
-        {
-						eyes(OFF,RED);						// turn on right eye only
-						nrf_delay_ms(400);				// delay 400ms
-						eyes(RED,OFF);						// turn on left eye only
-						nrf_delay_ms(400);				// delay 400ms				
-        }
-				
-	// This function rapidly flashes the eyes white and the orange LEDs on alternatively
-				for (int i = 0; i<40; i++)		// loop 30 times
-				{
-					eyes(WHITE,WHITE);					// turn both eyes white
-					LEDS_OFF(ORANGE_LEDS);			// turn off all orange LEDs
-					nrf_delay_ms(50);						// delay 50ms
-					eyes(OFF,OFF);							// turn both eyes off
-					LEDS_ON(ORANGE_LEDS);				// turn on all orange LEDs
-					nrf_delay_ms(50);						// delay 50ms
-				}   
-/*				//battery level test
-				nrf_delay_ms(800);
-				battery_level_get();
-				for (int j = 0; j<30; j++)
-				{
-					LEDS_OFF(ORANGE_LEDS);
-					if (battery_level_get() > 99)
-					{
-						LEDS_ON(1 << orange_leds_list[4]);
-					}
-					else if (battery_level_get() > 75)
-					{
-						LEDS_ON(1 << orange_leds_list[3]);
-					}
-					else if (battery_level_get() > 50)
-					{
-						LEDS_ON(1 << orange_leds_list[2]);
-					}
-					else if (battery_level_get() > 25)
-					{
-						LEDS_ON(1 << orange_leds_list[1]);
-					}
-					else
-					{
-						LEDS_ON(1 << orange_leds_list[0]);
-					}
-					
-					nrf_delay_ms(50);
-				}
-*/					
-				
+				//LEDS_OFF(LEDS_MASK);
+				//LEDS_ON(LEDS_MASK);
+    //}
+   
 }
 
 /**
@@ -424,23 +254,44 @@ int main(void)
 		
 		advertising_start();
 	
-		for (int pin = 0; pin < 32; pin++)
-		{
-			if ( (LEDS_MASK) & (1 << pin) )
-			{
-				nrf_gpio_cfg_output(pin);
-			}
+		// Configure the GPIOs as output
+	  for (int pin = 0; pin < 32; pin++)
+		{ 
+			if( (LEDS_MASK) & (1 << pin) )
+				{   
+					nrf_gpio_cfg_output(pin);
+				}
 		}
-	
+		
     // Enter main loop.
     for ( ; ; )
     {
-				power_manage();
-				//nrf_delay_ms(500);
+        power_manage();
 				
     }
 }
 
+/*
+
+    // Configure LED-pins as outputs.
+    const uint32_t leds_list[LEDS_NUMBER] = LEDS_LIST;
+		LEDS_CONFIGURE(LEDS_MASK);
+
+		//LEDS_INVERT(1 << leds_list[2]);  //yellow eye by turning blue off on right led
+		//LEDS_INVERT(1 << leds_list[0]);		//blue/green eye by turning red off on right led
+		LEDS_INVERT(1 << leds_list[1]);  //purple eye by turning green off on right led
+		LEDS_INVERT(1 << leds_list[4]);  //purple eye by turning green off on left led
+		
+    // Toggle LEDs.
+    while (true)
+    {
+        for (int i = 6; i < LEDS_NUMBER; i++)
+        {
+            LEDS_INVERT(1 << leds_list[i]);
+            nrf_delay_ms(500);
+        }
+    }
+}*/
 /**
  * @}
  */
