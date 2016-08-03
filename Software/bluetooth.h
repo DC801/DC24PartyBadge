@@ -29,6 +29,8 @@
 #define APP_EDDYSTONE_URL_SCHEME        0x03                              /**< 0x03 = "https://" 0x01 = "https://www."0x00 = "http://www" URL prefix scheme according to specification. */
 #define APP_EDDYSTONE_URL1_URL  'd','c','8','0','1','.','o','r','g'
 #define APP_EDDYSTONE_URL2_URL  'g','o','o','.','g','l','/','C','3','o','O','c','7'
+#define APP_EDDYSTONE_URL3_URL  '5','z','8',0x04,'w','o','r','m','_','z','l','g','g'
+#define APP_EDDYSTONE_URL4_URL  '0','0','0'
 
 //// Eddystone TLM data
 //#define APP_EDDYSTONE_TLM_FRAME_TYPE    0x20                              /**< TLM frame type is fixed at 0x20. */
@@ -62,6 +64,24 @@ static uint8_t eddystone_url_data2[] =  /**< Information advertised by the Eddys
     APP_EDDYSTONE_URL2_URL           // URL with a maximum length of 17 bytes. Last byte is suffix (".com", ".org", etc.)
 };
 #define URL2_SIZE sizeof(eddystone_url_data2)
+	
+static uint8_t eddystone_url_data3[] =  /**< Information advertised by the Eddystone URL frame type. */
+{
+    APP_EDDYSTONE_URL_FRAME_TYPE,   // Eddystone URL frame type.
+    APP_EDDYSTONE_RSSI,             // RSSI value at 0 m.
+    APP_EDDYSTONE_URL_SCHEME,       // Scheme or prefix for URL ("http", "http://www", etc.)
+    APP_EDDYSTONE_URL3_URL           // URL with a maximum length of 17 bytes. Last byte is suffix (".com", ".org", etc.)
+};
+#define URL3_SIZE sizeof(eddystone_url_data3)
+	
+static uint8_t eddystone_url_data4[] =  /**< Information advertised by the Eddystone URL frame type. */
+{
+    APP_EDDYSTONE_URL_FRAME_TYPE,   // Eddystone URL frame type.
+    APP_EDDYSTONE_RSSI,             // RSSI value at 0 m.
+    APP_EDDYSTONE_URL_SCHEME,       // Scheme or prefix for URL ("http", "http://www", etc.)
+    APP_EDDYSTONE_URL4_URL           // URL with a maximum length of 17 bytes. Last byte is suffix (".com", ".org", etc.)
+};
+#define URL4_SIZE sizeof(eddystone_url_data4)
 
 void advertising_init(uint8_t *, int);
 void advertising_start(void);

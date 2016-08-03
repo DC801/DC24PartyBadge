@@ -302,3 +302,21 @@ void alternateOrange(void){
 	
 }
 
+void seizureMode(void){
+	
+	while(!breakWait){
+		
+		eyes(WHITE,WHITE);				
+		LED_OFF(ALL_ORANGE_BITS);
+		led_wait_ms(50);
+		if(breakWait) return;
+		
+		eyes(OFF,OFF);
+		LED_ON(ALL_ORANGE_BITS);
+		led_wait_ms(50);
+		if(breakWait) return;
+
+	}  
+	
+}
+

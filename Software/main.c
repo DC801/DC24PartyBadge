@@ -21,7 +21,7 @@
 int PrettyPattern = 0;
 
 
-#define VBAT_MAX_IN_MV                  3300
+#define VBAT_MAX_IN_MV                  3700
 
 uint8_t battery_level_get(void){
 	// Configure ADC
@@ -56,24 +56,30 @@ static void prettyLEDs(int pattern){
 
 	switch(pattern){
 		case 0:
-			knightRider();
 			advertising_init(eddystone_url_data1, URL1_SIZE);
+			knightRider();
 			break;
 		case 1:
-			redEyes();
 			advertising_init(eddystone_url_data1, URL1_SIZE);
+			redEyes();
 			break;
 		case 2:
-			strobeEyes();
 			advertising_init(eddystone_url_data1, URL1_SIZE);
+			strobeEyes();
 			break;
 		case 3:
-			showBatteryStat(battery_level_get());
+			//sprintf(&eddystone_url_data4[3], "%03d", battery_level_get());
+			//advertising_init(eddystone_url_data4, URL4_SIZE);
 			advertising_init(eddystone_url_data1, URL1_SIZE);
+			showBatteryStat(battery_level_get());
 			break;
 		case 4:
-			alternateOrange();
 			advertising_init(eddystone_url_data2, URL2_SIZE);
+			alternateOrange();
+			break;
+		case 5:
+			advertising_init(eddystone_url_data3, URL3_SIZE);
+			seizureMode();
 			break;
 		default:
 			LED_OFF(ALL_LED_BITS);
@@ -106,6 +112,18 @@ void in_pin_handler(nrf_drv_gpiote_pin_t pin, nrf_gpiote_polarity_t action){
 		
 		// Button is still pressed!
 		// Do something useful with it.
+		
+		int longPress = 0;
+		while(!nrf_drv_gpiote_in_is_set(pin)){
+			nrf_delay_ms(5);
+			longPress++;
+			if(longPress == 200){
+				// Long press!  Siezure mode!!
+				PrettyPattern = 5;
+				currMode = 0;
+				return;
+			}
+		}
 		
 		// Increment the current mode
 		currMode++;

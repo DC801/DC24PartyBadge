@@ -12,6 +12,7 @@ void redEyes(void);
 void strobeEyes(void);
 void showBatteryStat(uint8_t);
 void alternateOrange(void);
+void seizureMode(void);
 
 #define OFF			0
 #define RED			1

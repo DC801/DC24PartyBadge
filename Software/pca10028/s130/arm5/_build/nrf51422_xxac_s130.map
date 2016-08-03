@@ -27,13 +27,14 @@ Section Cross References
     main.o(i.main) refers to main.o(.constdata) for .constdata
     main.o(i.main) refers to main.o(i.in_pin_handler) for in_pin_handler
     main.o(i.prettyLEDs) refers to main.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    main.o(i.prettyLEDs) refers to bluetooth.o(i.advertising_init) for advertising_init
     main.o(i.prettyLEDs) refers to led_patterns.o(i.knightRider) for knightRider
     main.o(i.prettyLEDs) refers to led_patterns.o(i.redEyes) for redEyes
     main.o(i.prettyLEDs) refers to led_patterns.o(i.strobeEyes) for strobeEyes
     main.o(i.prettyLEDs) refers to main.o(i.battery_level_get) for battery_level_get
     main.o(i.prettyLEDs) refers to led_patterns.o(i.showBatteryStat) for showBatteryStat
     main.o(i.prettyLEDs) refers to led_patterns.o(i.alternateOrange) for alternateOrange
-    main.o(i.prettyLEDs) refers to bluetooth.o(i.advertising_init) for advertising_init
+    main.o(i.prettyLEDs) refers to led_patterns.o(i.seizureMode) for seizureMode
     main.o(i.prettyLEDs) refers to main.o(.data) for .data
     main.o(i.prettyLEDs) refers to led_patterns.o(.data) for breakWait
     led_patterns.o(i.alternateOrange) refers to memcpya.o(.text) for __aeabi_memcpy4
@@ -54,6 +55,9 @@ Section Cross References
     led_patterns.o(i.redEyes) refers to led_patterns.o(i.eyes) for eyes
     led_patterns.o(i.redEyes) refers to led_patterns.o(i.led_wait_ms) for led_wait_ms
     led_patterns.o(i.redEyes) refers to led_patterns.o(.data) for .data
+    led_patterns.o(i.seizureMode) refers to led_patterns.o(i.eyes) for eyes
+    led_patterns.o(i.seizureMode) refers to led_patterns.o(i.led_wait_ms) for led_wait_ms
+    led_patterns.o(i.seizureMode) refers to led_patterns.o(.data) for .data
     led_patterns.o(i.showBatteryStat) refers to led_patterns.o(i.led_wait_ms) for led_wait_ms
     led_patterns.o(i.showBatteryStat) refers to led_patterns.o(.data) for .data
     led_patterns.o(i.strobeEyes) refers to led_patterns.o(i.eyes) for eyes
@@ -581,22 +585,22 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/stdlib/rand.c           0x00000000   Number         0  rand.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
@@ -709,122 +713,124 @@ Image Symbol Table
     i.eyes                                   0x0001cbf8   Section        0  led_patterns.o(i.eyes)
     eyes                                     0x0001cbf9   Thumb Code   140  led_patterns.o(i.eyes)
     i.in_pin_handler                         0x0001cc88   Section        0  main.o(i.in_pin_handler)
-    i.intern_softdevice_events_execute       0x0001cd20   Section        0  softdevice_handler.o(i.intern_softdevice_events_execute)
-    i.is_manual_peripheral_setup_needed      0x0001cd98   Section        0  system_nrf51.o(i.is_manual_peripheral_setup_needed)
-    is_manual_peripheral_setup_needed        0x0001cd99   Thumb Code    66  system_nrf51.o(i.is_manual_peripheral_setup_needed)
-    i.knightRider                            0x0001cde0   Section        0  led_patterns.o(i.knightRider)
-    i.le_role_encode                         0x0001ceb4   Section        0  ble_advdata.o(i.le_role_encode)
-    le_role_encode                           0x0001ceb5   Thumb Code    84  ble_advdata.o(i.le_role_encode)
-    i.led_wait_ms                            0x0001cf08   Section        0  led_patterns.o(i.led_wait_ms)
-    i.led_wait_us                            0x0001cf2c   Section        0  led_patterns.o(i.led_wait_us)
-    i.list_deletions_handler                 0x0001cf50   Section        0  app_timer.o(i.list_deletions_handler)
-    list_deletions_handler                   0x0001cf51   Thumb Code   180  app_timer.o(i.list_deletions_handler)
-    i.list_insertions_handler                0x0001d00c   Section        0  app_timer.o(i.list_insertions_handler)
-    list_insertions_handler                  0x0001d00d   Thumb Code   202  app_timer.o(i.list_insertions_handler)
-    i.main                                   0x0001d0e0   Section        0  main.o(i.main)
-    i.manuf_specific_data_encode             0x0001d168   Section        0  ble_advdata.o(i.manuf_specific_data_encode)
-    manuf_specific_data_encode               0x0001d169   Thumb Code   104  ble_advdata.o(i.manuf_specific_data_encode)
-    i.name_encode                            0x0001d1d0   Section        0  ble_advdata.o(i.name_encode)
-    name_encode                              0x0001d1d1   Thumb Code   158  ble_advdata.o(i.name_encode)
-    i.nrf_delay_ms                           0x0001d270   Section        0  nrf_delay.o(i.nrf_delay_ms)
-    i.nrf_drv_common_irq_enable              0x0001d28c   Section        0  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
-    i.nrf_drv_gpiote_in_event_enable         0x0001d2ec   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_event_enable)
-    i.nrf_drv_gpiote_in_init                 0x0001d38c   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_init)
-    i.nrf_drv_gpiote_in_is_set               0x0001d430   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_is_set)
-    i.nrf_drv_gpiote_init                    0x0001d444   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_init)
-    i.nrf_drv_gpiote_out_init                0x0001d498   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_out_init)
-    i.nrf_gpio_cfg                           0x0001d530   Section        0  nrf_drv_gpiote.o(i.nrf_gpio_cfg)
-    nrf_gpio_cfg                             0x0001d531   Thumb Code    32  nrf_drv_gpiote.o(i.nrf_gpio_cfg)
-    i.nrf_gpio_cfg_sense_set                 0x0001d554   Section        0  nrf_drv_gpiote.o(i.nrf_gpio_cfg_sense_set)
-    nrf_gpio_cfg_sense_set                   0x0001d555   Thumb Code    26  nrf_drv_gpiote.o(i.nrf_gpio_cfg_sense_set)
-    i.nrf_gpiote_event_is_set                0x0001d574   Section        0  nrf_drv_gpiote.o(i.nrf_gpiote_event_is_set)
-    nrf_gpiote_event_is_set                  0x0001d575   Thumb Code    14  nrf_drv_gpiote.o(i.nrf_gpiote_event_is_set)
-    i.nrf_uart_event_check                   0x0001d588   Section        0  nrf_drv_uart.o(i.nrf_uart_event_check)
-    nrf_uart_event_check                     0x0001d589   Thumb Code    10  nrf_drv_uart.o(i.nrf_uart_event_check)
-    i.nrf_uart_int_enable_check              0x0001d592   Section        0  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
-    nrf_uart_int_enable_check                0x0001d593   Thumb Code    16  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
-    i.pin_in_use_by_port                     0x0001d5a4   Section        0  nrf_drv_gpiote.o(i.pin_in_use_by_port)
-    pin_in_use_by_port                       0x0001d5a5   Thumb Code    20  nrf_drv_gpiote.o(i.pin_in_use_by_port)
-    i.pin_in_use_by_te                       0x0001d5bc   Section        0  nrf_drv_gpiote.o(i.pin_in_use_by_te)
-    pin_in_use_by_te                         0x0001d5bd   Thumb Code    20  nrf_drv_gpiote.o(i.pin_in_use_by_te)
-    i.prettyLEDs                             0x0001d5d4   Section        0  main.o(i.prettyLEDs)
-    prettyLEDs                               0x0001d5d5   Thumb Code    78  main.o(i.prettyLEDs)
-    i.redEyes                                0x0001d634   Section        0  led_patterns.o(i.redEyes)
-    i.rtc1_stop                              0x0001d660   Section        0  app_timer.o(i.rtc1_stop)
-    rtc1_stop                                0x0001d661   Thumb Code    50  app_timer.o(i.rtc1_stop)
-    i.rx_byte                                0x0001d6a4   Section        0  nrf_drv_uart.o(i.rx_byte)
-    rx_byte                                  0x0001d6a5   Thumb Code    42  nrf_drv_uart.o(i.rx_byte)
-    i.rx_done_event                          0x0001d6dc   Section        0  nrf_drv_uart.o(i.rx_done_event)
-    rx_done_event                            0x0001d6dd   Thumb Code    22  nrf_drv_uart.o(i.rx_done_event)
-    i.sd_check_ram_start                     0x0001d6f8   Section        0  softdevice_handler.o(i.sd_check_ram_start)
-    i.service_data_encode                    0x0001d708   Section        0  ble_advdata.o(i.service_data_encode)
-    service_data_encode                      0x0001d709   Thumb Code   142  ble_advdata.o(i.service_data_encode)
-    i.showBatteryStat                        0x0001d798   Section        0  led_patterns.o(i.showBatteryStat)
-    i.softdevice_enable                      0x0001d84c   Section        0  softdevice_handler.o(i.softdevice_enable)
-    i.softdevice_enable_get_default_config   0x0001d860   Section        0  softdevice_handler.o(i.softdevice_enable_get_default_config)
-    i.softdevice_fault_handler               0x0001d888   Section        0  softdevice_handler.o(i.softdevice_fault_handler)
-    i.softdevice_handler_init                0x0001d890   Section        0  softdevice_handler.o(i.softdevice_handler_init)
-    i.strobeEyes                             0x0001d8c0   Section        0  led_patterns.o(i.strobeEyes)
-    i.timer_list_handler                     0x0001d9cc   Section        0  app_timer.o(i.timer_list_handler)
-    timer_list_handler                       0x0001d9cd   Thumb Code   128  app_timer.o(i.timer_list_handler)
-    i.timer_list_handler_sched               0x0001da50   Section        0  app_timer.o(i.timer_list_handler_sched)
-    timer_list_handler_sched                 0x0001da51   Thumb Code    10  app_timer.o(i.timer_list_handler_sched)
-    i.timer_list_insert                      0x0001da60   Section        0  app_timer.o(i.timer_list_insert)
-    timer_list_insert                        0x0001da61   Thumb Code    60  app_timer.o(i.timer_list_insert)
-    i.timer_timeouts_check                   0x0001daa0   Section        0  app_timer.o(i.timer_timeouts_check)
-    timer_timeouts_check                     0x0001daa1   Thumb Code   118  app_timer.o(i.timer_timeouts_check)
-    i.tx_byte                                0x0001db20   Section        0  nrf_drv_uart.o(i.tx_byte)
-    tx_byte                                  0x0001db21   Thumb Code    30  nrf_drv_uart.o(i.tx_byte)
-    i.tx_done_event                          0x0001db4c   Section        0  nrf_drv_uart.o(i.tx_done_event)
-    tx_done_event                            0x0001db4d   Thumb Code    26  nrf_drv_uart.o(i.tx_done_event)
-    i.uart_irq_handler                       0x0001db6c   Section        0  nrf_drv_uart.o(i.uart_irq_handler)
-    uart_irq_handler                         0x0001db6d   Thumb Code   278  nrf_drv_uart.o(i.uart_irq_handler)
-    i.uint16_encode                          0x0001dc94   Section        0  ble_advdata.o(i.uint16_encode)
-    uint16_encode                            0x0001dc95   Thumb Code    10  ble_advdata.o(i.uint16_encode)
-    i.uuid_list_encode                       0x0001dc9e   Section        0  ble_advdata.o(i.uuid_list_encode)
-    uuid_list_encode                         0x0001dc9f   Thumb Code    48  ble_advdata.o(i.uuid_list_encode)
-    i.uuid_list_sized_encode                 0x0001dcce   Section        0  ble_advdata.o(i.uuid_list_sized_encode)
-    uuid_list_sized_encode                   0x0001dccf   Thumb Code   174  ble_advdata.o(i.uuid_list_sized_encode)
-    .constdata                               0x0001dd7c   Section       72  main.o(.constdata)
-    .constdata                               0x0001ddc4   Section       40  led_patterns.o(.constdata)
-    .constdata                               0x0001ddec   Section        4  bluetooth.o(.constdata)
-    .data                                    0x20002800   Section       40  main.o(.data)
+    i.intern_softdevice_events_execute       0x0001cd40   Section        0  softdevice_handler.o(i.intern_softdevice_events_execute)
+    i.is_manual_peripheral_setup_needed      0x0001cdb8   Section        0  system_nrf51.o(i.is_manual_peripheral_setup_needed)
+    is_manual_peripheral_setup_needed        0x0001cdb9   Thumb Code    66  system_nrf51.o(i.is_manual_peripheral_setup_needed)
+    i.knightRider                            0x0001ce00   Section        0  led_patterns.o(i.knightRider)
+    i.le_role_encode                         0x0001ced4   Section        0  ble_advdata.o(i.le_role_encode)
+    le_role_encode                           0x0001ced5   Thumb Code    84  ble_advdata.o(i.le_role_encode)
+    i.led_wait_ms                            0x0001cf28   Section        0  led_patterns.o(i.led_wait_ms)
+    i.led_wait_us                            0x0001cf4c   Section        0  led_patterns.o(i.led_wait_us)
+    i.list_deletions_handler                 0x0001cf70   Section        0  app_timer.o(i.list_deletions_handler)
+    list_deletions_handler                   0x0001cf71   Thumb Code   180  app_timer.o(i.list_deletions_handler)
+    i.list_insertions_handler                0x0001d02c   Section        0  app_timer.o(i.list_insertions_handler)
+    list_insertions_handler                  0x0001d02d   Thumb Code   202  app_timer.o(i.list_insertions_handler)
+    i.main                                   0x0001d100   Section        0  main.o(i.main)
+    i.manuf_specific_data_encode             0x0001d188   Section        0  ble_advdata.o(i.manuf_specific_data_encode)
+    manuf_specific_data_encode               0x0001d189   Thumb Code   104  ble_advdata.o(i.manuf_specific_data_encode)
+    i.name_encode                            0x0001d1f0   Section        0  ble_advdata.o(i.name_encode)
+    name_encode                              0x0001d1f1   Thumb Code   158  ble_advdata.o(i.name_encode)
+    i.nrf_delay_ms                           0x0001d290   Section        0  nrf_delay.o(i.nrf_delay_ms)
+    i.nrf_drv_common_irq_enable              0x0001d2ac   Section        0  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    i.nrf_drv_gpiote_in_event_enable         0x0001d30c   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_event_enable)
+    i.nrf_drv_gpiote_in_init                 0x0001d3ac   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_init)
+    i.nrf_drv_gpiote_in_is_set               0x0001d450   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_is_set)
+    i.nrf_drv_gpiote_init                    0x0001d464   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_init)
+    i.nrf_drv_gpiote_out_init                0x0001d4b8   Section        0  nrf_drv_gpiote.o(i.nrf_drv_gpiote_out_init)
+    i.nrf_gpio_cfg                           0x0001d550   Section        0  nrf_drv_gpiote.o(i.nrf_gpio_cfg)
+    nrf_gpio_cfg                             0x0001d551   Thumb Code    32  nrf_drv_gpiote.o(i.nrf_gpio_cfg)
+    i.nrf_gpio_cfg_sense_set                 0x0001d574   Section        0  nrf_drv_gpiote.o(i.nrf_gpio_cfg_sense_set)
+    nrf_gpio_cfg_sense_set                   0x0001d575   Thumb Code    26  nrf_drv_gpiote.o(i.nrf_gpio_cfg_sense_set)
+    i.nrf_gpiote_event_is_set                0x0001d594   Section        0  nrf_drv_gpiote.o(i.nrf_gpiote_event_is_set)
+    nrf_gpiote_event_is_set                  0x0001d595   Thumb Code    14  nrf_drv_gpiote.o(i.nrf_gpiote_event_is_set)
+    i.nrf_uart_event_check                   0x0001d5a8   Section        0  nrf_drv_uart.o(i.nrf_uart_event_check)
+    nrf_uart_event_check                     0x0001d5a9   Thumb Code    10  nrf_drv_uart.o(i.nrf_uart_event_check)
+    i.nrf_uart_int_enable_check              0x0001d5b2   Section        0  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
+    nrf_uart_int_enable_check                0x0001d5b3   Thumb Code    16  nrf_drv_uart.o(i.nrf_uart_int_enable_check)
+    i.pin_in_use_by_port                     0x0001d5c4   Section        0  nrf_drv_gpiote.o(i.pin_in_use_by_port)
+    pin_in_use_by_port                       0x0001d5c5   Thumb Code    20  nrf_drv_gpiote.o(i.pin_in_use_by_port)
+    i.pin_in_use_by_te                       0x0001d5dc   Section        0  nrf_drv_gpiote.o(i.pin_in_use_by_te)
+    pin_in_use_by_te                         0x0001d5dd   Thumb Code    20  nrf_drv_gpiote.o(i.pin_in_use_by_te)
+    i.prettyLEDs                             0x0001d5f4   Section        0  main.o(i.prettyLEDs)
+    prettyLEDs                               0x0001d5f5   Thumb Code   122  main.o(i.prettyLEDs)
+    i.redEyes                                0x0001d680   Section        0  led_patterns.o(i.redEyes)
+    i.rtc1_stop                              0x0001d6ac   Section        0  app_timer.o(i.rtc1_stop)
+    rtc1_stop                                0x0001d6ad   Thumb Code    50  app_timer.o(i.rtc1_stop)
+    i.rx_byte                                0x0001d6f0   Section        0  nrf_drv_uart.o(i.rx_byte)
+    rx_byte                                  0x0001d6f1   Thumb Code    42  nrf_drv_uart.o(i.rx_byte)
+    i.rx_done_event                          0x0001d728   Section        0  nrf_drv_uart.o(i.rx_done_event)
+    rx_done_event                            0x0001d729   Thumb Code    22  nrf_drv_uart.o(i.rx_done_event)
+    i.sd_check_ram_start                     0x0001d744   Section        0  softdevice_handler.o(i.sd_check_ram_start)
+    i.seizureMode                            0x0001d754   Section        0  led_patterns.o(i.seizureMode)
+    i.service_data_encode                    0x0001d7a0   Section        0  ble_advdata.o(i.service_data_encode)
+    service_data_encode                      0x0001d7a1   Thumb Code   142  ble_advdata.o(i.service_data_encode)
+    i.showBatteryStat                        0x0001d830   Section        0  led_patterns.o(i.showBatteryStat)
+    i.softdevice_enable                      0x0001d8e4   Section        0  softdevice_handler.o(i.softdevice_enable)
+    i.softdevice_enable_get_default_config   0x0001d8f8   Section        0  softdevice_handler.o(i.softdevice_enable_get_default_config)
+    i.softdevice_fault_handler               0x0001d920   Section        0  softdevice_handler.o(i.softdevice_fault_handler)
+    i.softdevice_handler_init                0x0001d928   Section        0  softdevice_handler.o(i.softdevice_handler_init)
+    i.strobeEyes                             0x0001d958   Section        0  led_patterns.o(i.strobeEyes)
+    i.timer_list_handler                     0x0001da64   Section        0  app_timer.o(i.timer_list_handler)
+    timer_list_handler                       0x0001da65   Thumb Code   128  app_timer.o(i.timer_list_handler)
+    i.timer_list_handler_sched               0x0001dae8   Section        0  app_timer.o(i.timer_list_handler_sched)
+    timer_list_handler_sched                 0x0001dae9   Thumb Code    10  app_timer.o(i.timer_list_handler_sched)
+    i.timer_list_insert                      0x0001daf8   Section        0  app_timer.o(i.timer_list_insert)
+    timer_list_insert                        0x0001daf9   Thumb Code    60  app_timer.o(i.timer_list_insert)
+    i.timer_timeouts_check                   0x0001db38   Section        0  app_timer.o(i.timer_timeouts_check)
+    timer_timeouts_check                     0x0001db39   Thumb Code   118  app_timer.o(i.timer_timeouts_check)
+    i.tx_byte                                0x0001dbb8   Section        0  nrf_drv_uart.o(i.tx_byte)
+    tx_byte                                  0x0001dbb9   Thumb Code    30  nrf_drv_uart.o(i.tx_byte)
+    i.tx_done_event                          0x0001dbe4   Section        0  nrf_drv_uart.o(i.tx_done_event)
+    tx_done_event                            0x0001dbe5   Thumb Code    26  nrf_drv_uart.o(i.tx_done_event)
+    i.uart_irq_handler                       0x0001dc04   Section        0  nrf_drv_uart.o(i.uart_irq_handler)
+    uart_irq_handler                         0x0001dc05   Thumb Code   278  nrf_drv_uart.o(i.uart_irq_handler)
+    i.uint16_encode                          0x0001dd2c   Section        0  ble_advdata.o(i.uint16_encode)
+    uint16_encode                            0x0001dd2d   Thumb Code    10  ble_advdata.o(i.uint16_encode)
+    i.uuid_list_encode                       0x0001dd36   Section        0  ble_advdata.o(i.uuid_list_encode)
+    uuid_list_encode                         0x0001dd37   Thumb Code    48  ble_advdata.o(i.uuid_list_encode)
+    i.uuid_list_sized_encode                 0x0001dd66   Section        0  ble_advdata.o(i.uuid_list_sized_encode)
+    uuid_list_sized_encode                   0x0001dd67   Thumb Code   174  ble_advdata.o(i.uuid_list_sized_encode)
+    .constdata                               0x0001de14   Section       72  main.o(.constdata)
+    .constdata                               0x0001de5c   Section       40  led_patterns.o(.constdata)
+    .constdata                               0x0001de84   Section        4  bluetooth.o(.constdata)
+    .data                                    0x20002800   Section       52  main.o(.data)
     currMode                                 0x20002804   Data           4  main.o(.data)
-    eddystone_url_data1                      0x20002808   Data          16  main.o(.data)
-    eddystone_url_data2                      0x20002818   Data          16  main.o(.data)
-    .data                                    0x20002828   Section        4  led_patterns.o(.data)
-    .data                                    0x2000282c   Section        4  system_nrf51.o(.data)
-    __tagsym$$used                           0x2000282c   Number         0  system_nrf51.o(.data)
-    .data                                    0x20002830   Section       32  app_timer.o(.data)
-    m_user_array_size                        0x20002830   Data           1  app_timer.o(.data)
-    m_ticks_elapsed_q_read_ind               0x20002831   Data           1  app_timer.o(.data)
-    m_ticks_elapsed_q_write_ind              0x20002832   Data           1  app_timer.o(.data)
-    m_rtc1_running                           0x20002833   Data           1  app_timer.o(.data)
-    m_rtc1_reset                             0x20002834   Data           1  app_timer.o(.data)
-    mp_users                                 0x20002838   Data           4  app_timer.o(.data)
-    mp_timer_id_head                         0x2000283c   Data           4  app_timer.o(.data)
-    m_ticks_latest                           0x20002840   Data           4  app_timer.o(.data)
-    m_evt_schedule_func                      0x20002844   Data           4  app_timer.o(.data)
-    m_ticks_elapsed                          0x20002848   Data           8  app_timer.o(.data)
-    .data                                    0x20002850   Section       20  softdevice_handler.o(.data)
-    m_softdevice_enabled                     0x20002850   Data           1  softdevice_handler.o(.data)
-    m_ble_evt_buffer_size                    0x20002852   Data           2  softdevice_handler.o(.data)
-    m_evt_schedule_func                      0x20002854   Data           4  softdevice_handler.o(.data)
-    mp_ble_evt_buffer                        0x20002858   Data           4  softdevice_handler.o(.data)
-    m_ble_evt_handler                        0x2000285c   Data           4  softdevice_handler.o(.data)
-    m_sys_evt_handler                        0x20002860   Data           4  softdevice_handler.o(.data)
-    .data                                    0x20002864   Section        4  rand.o(.data)
-    _rand_state                              0x20002864   Data           4  rand.o(.data)
-    .bss                                     0x20002868   Section      456  main.o(.bss)
-    APP_TIMER_BUF                            0x20002868   Data         456  main.o(.bss)
-    .bss                                     0x20002a30   Section       96  bluetooth.o(.bss)
-    BLE_EVT_BUFFER                           0x20002a30   Data          72  bluetooth.o(.bss)
-    m_adv_params                             0x20002a78   Data          24  bluetooth.o(.bss)
-    .bss                                     0x20002a90   Section       72  nrf_drv_gpiote.o(.bss)
-    m_cb                                     0x20002a90   Data          72  nrf_drv_gpiote.o(.bss)
-    .bss                                     0x20002ad8   Section       28  nrf_drv_uart.o(.bss)
-    m_cb                                     0x20002ad8   Data          28  nrf_drv_uart.o(.bss)
-    STACK                                    0x20002af8   Section     2048  arm_startup_nrf51.o(STACK)
+    eddystone_url_data1                      0x20002808   Data          12  main.o(.data)
+    eddystone_url_data2                      0x20002814   Data          16  main.o(.data)
+    eddystone_url_data3                      0x20002824   Data          16  main.o(.data)
+    .data                                    0x20002834   Section        4  led_patterns.o(.data)
+    .data                                    0x20002838   Section        4  system_nrf51.o(.data)
+    __tagsym$$used                           0x20002838   Number         0  system_nrf51.o(.data)
+    .data                                    0x2000283c   Section       32  app_timer.o(.data)
+    m_user_array_size                        0x2000283c   Data           1  app_timer.o(.data)
+    m_ticks_elapsed_q_read_ind               0x2000283d   Data           1  app_timer.o(.data)
+    m_ticks_elapsed_q_write_ind              0x2000283e   Data           1  app_timer.o(.data)
+    m_rtc1_running                           0x2000283f   Data           1  app_timer.o(.data)
+    m_rtc1_reset                             0x20002840   Data           1  app_timer.o(.data)
+    mp_users                                 0x20002844   Data           4  app_timer.o(.data)
+    mp_timer_id_head                         0x20002848   Data           4  app_timer.o(.data)
+    m_ticks_latest                           0x2000284c   Data           4  app_timer.o(.data)
+    m_evt_schedule_func                      0x20002850   Data           4  app_timer.o(.data)
+    m_ticks_elapsed                          0x20002854   Data           8  app_timer.o(.data)
+    .data                                    0x2000285c   Section       20  softdevice_handler.o(.data)
+    m_softdevice_enabled                     0x2000285c   Data           1  softdevice_handler.o(.data)
+    m_ble_evt_buffer_size                    0x2000285e   Data           2  softdevice_handler.o(.data)
+    m_evt_schedule_func                      0x20002860   Data           4  softdevice_handler.o(.data)
+    mp_ble_evt_buffer                        0x20002864   Data           4  softdevice_handler.o(.data)
+    m_ble_evt_handler                        0x20002868   Data           4  softdevice_handler.o(.data)
+    m_sys_evt_handler                        0x2000286c   Data           4  softdevice_handler.o(.data)
+    .data                                    0x20002870   Section        4  rand.o(.data)
+    _rand_state                              0x20002870   Data           4  rand.o(.data)
+    .bss                                     0x20002874   Section      456  main.o(.bss)
+    APP_TIMER_BUF                            0x20002874   Data         456  main.o(.bss)
+    .bss                                     0x20002a3c   Section       96  bluetooth.o(.bss)
+    BLE_EVT_BUFFER                           0x20002a3c   Data          72  bluetooth.o(.bss)
+    m_adv_params                             0x20002a84   Data          24  bluetooth.o(.bss)
+    .bss                                     0x20002a9c   Section       72  nrf_drv_gpiote.o(.bss)
+    m_cb                                     0x20002a9c   Data          72  nrf_drv_gpiote.o(.bss)
+    .bss                                     0x20002ae4   Section       28  nrf_drv_uart.o(.bss)
+    m_cb                                     0x20002ae4   Data          28  nrf_drv_uart.o(.bss)
+    STACK                                    0x20002b00   Section     2048  arm_startup_nrf51.o(STACK)
 
     Global Symbols
 
@@ -916,34 +922,35 @@ Image Symbol Table
     battery_level_get                        0x0001c8a9   Thumb Code    64  main.o(i.battery_level_get)
     ble_advdata_set                          0x0001c8f9   Thumb Code   104  ble_advdata.o(i.ble_advdata_set)
     ble_stack_init                           0x0001c9c1   Thumb Code    74  bluetooth.o(i.ble_stack_init)
-    in_pin_handler                           0x0001cc89   Thumb Code   128  main.o(i.in_pin_handler)
-    intern_softdevice_events_execute         0x0001cd21   Thumb Code   116  softdevice_handler.o(i.intern_softdevice_events_execute)
-    knightRider                              0x0001cde1   Thumb Code   196  led_patterns.o(i.knightRider)
-    led_wait_ms                              0x0001cf09   Thumb Code    30  led_patterns.o(i.led_wait_ms)
-    led_wait_us                              0x0001cf2d   Thumb Code    30  led_patterns.o(i.led_wait_us)
-    main                                     0x0001d0e1   Thumb Code   118  main.o(i.main)
-    nrf_delay_ms                             0x0001d271   Thumb Code    24  nrf_delay.o(i.nrf_delay_ms)
-    nrf_drv_common_irq_enable                0x0001d28d   Thumb Code    78  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
-    nrf_drv_gpiote_in_event_enable           0x0001d2ed   Thumb Code   138  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_event_enable)
-    nrf_drv_gpiote_in_init                   0x0001d38d   Thumb Code   146  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_init)
-    nrf_drv_gpiote_in_is_set                 0x0001d431   Thumb Code    16  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_is_set)
-    nrf_drv_gpiote_init                      0x0001d445   Thumb Code    76  nrf_drv_gpiote.o(i.nrf_drv_gpiote_init)
-    nrf_drv_gpiote_out_init                  0x0001d499   Thumb Code   136  nrf_drv_gpiote.o(i.nrf_drv_gpiote_out_init)
-    redEyes                                  0x0001d635   Thumb Code    40  led_patterns.o(i.redEyes)
-    sd_check_ram_start                       0x0001d6f9   Thumb Code    10  softdevice_handler.o(i.sd_check_ram_start)
-    showBatteryStat                          0x0001d799   Thumb Code   166  led_patterns.o(i.showBatteryStat)
-    softdevice_enable                        0x0001d84d   Thumb Code    14  softdevice_handler.o(i.softdevice_enable)
-    softdevice_enable_get_default_config     0x0001d861   Thumb Code    40  softdevice_handler.o(i.softdevice_enable_get_default_config)
-    softdevice_fault_handler                 0x0001d889   Thumb Code     8  softdevice_handler.o(i.softdevice_fault_handler)
-    softdevice_handler_init                  0x0001d891   Thumb Code    40  softdevice_handler.o(i.softdevice_handler_init)
-    strobeEyes                               0x0001d8c1   Thumb Code   262  led_patterns.o(i.strobeEyes)
-    Region$$Table$$Base                      0x0001ddf0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0001de10   Number         0  anon$$obj.o(Region$$Table)
+    in_pin_handler                           0x0001cc89   Thumb Code   160  main.o(i.in_pin_handler)
+    intern_softdevice_events_execute         0x0001cd41   Thumb Code   116  softdevice_handler.o(i.intern_softdevice_events_execute)
+    knightRider                              0x0001ce01   Thumb Code   196  led_patterns.o(i.knightRider)
+    led_wait_ms                              0x0001cf29   Thumb Code    30  led_patterns.o(i.led_wait_ms)
+    led_wait_us                              0x0001cf4d   Thumb Code    30  led_patterns.o(i.led_wait_us)
+    main                                     0x0001d101   Thumb Code   118  main.o(i.main)
+    nrf_delay_ms                             0x0001d291   Thumb Code    24  nrf_delay.o(i.nrf_delay_ms)
+    nrf_drv_common_irq_enable                0x0001d2ad   Thumb Code    78  nrf_drv_common.o(i.nrf_drv_common_irq_enable)
+    nrf_drv_gpiote_in_event_enable           0x0001d30d   Thumb Code   138  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_event_enable)
+    nrf_drv_gpiote_in_init                   0x0001d3ad   Thumb Code   146  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_init)
+    nrf_drv_gpiote_in_is_set                 0x0001d451   Thumb Code    16  nrf_drv_gpiote.o(i.nrf_drv_gpiote_in_is_set)
+    nrf_drv_gpiote_init                      0x0001d465   Thumb Code    76  nrf_drv_gpiote.o(i.nrf_drv_gpiote_init)
+    nrf_drv_gpiote_out_init                  0x0001d4b9   Thumb Code   136  nrf_drv_gpiote.o(i.nrf_drv_gpiote_out_init)
+    redEyes                                  0x0001d681   Thumb Code    40  led_patterns.o(i.redEyes)
+    sd_check_ram_start                       0x0001d745   Thumb Code    10  softdevice_handler.o(i.sd_check_ram_start)
+    seizureMode                              0x0001d755   Thumb Code    62  led_patterns.o(i.seizureMode)
+    showBatteryStat                          0x0001d831   Thumb Code   166  led_patterns.o(i.showBatteryStat)
+    softdevice_enable                        0x0001d8e5   Thumb Code    14  softdevice_handler.o(i.softdevice_enable)
+    softdevice_enable_get_default_config     0x0001d8f9   Thumb Code    40  softdevice_handler.o(i.softdevice_enable_get_default_config)
+    softdevice_fault_handler                 0x0001d921   Thumb Code     8  softdevice_handler.o(i.softdevice_fault_handler)
+    softdevice_handler_init                  0x0001d929   Thumb Code    40  softdevice_handler.o(i.softdevice_handler_init)
+    strobeEyes                               0x0001d959   Thumb Code   262  led_patterns.o(i.strobeEyes)
+    Region$$Table$$Base                      0x0001de88   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0001dea8   Number         0  anon$$obj.o(Region$$Table)
     Image$$RW_IRAM1$$Base                    0x20002800   Number         0  anon$$obj.o ABSOLUTE
     PrettyPattern                            0x20002800   Data           4  main.o(.data)
-    breakWait                                0x20002828   Data           4  led_patterns.o(.data)
-    SystemCoreClock                          0x2000282c   Data           4  system_nrf51.o(.data)
-    __initial_sp                             0x200032f8   Data           0  arm_startup_nrf51.o(STACK)
+    breakWait                                0x20002834   Data           4  led_patterns.o(.data)
+    SystemCoreClock                          0x20002838   Data           4  system_nrf51.o(.data)
+    __initial_sp                             0x20003300   Data           0  arm_startup_nrf51.o(STACK)
 
 
 
@@ -953,140 +960,140 @@ Memory Map of the image
 
   Image Entry point : 0x0001c0c1
 
-  Load Region LR_IROM1 (Base: 0x0001c000, Size: 0x00001e78, Max: 0x0000f000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x0001c000, Size: 0x00001f1c, Max: 0x0000f000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x0001c000, Size: 0x00001e10, Max: 0x0000f000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x0001c000, Size: 0x00001ea8, Max: 0x0000f000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x0001c000   0x000000c0   Data   RO          354    RESET               arm_startup_nrf51.o
-    0x0001c0c0   0x00000000   Code   RO         1739  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
-    0x0001c0c0   0x00000004   Code   RO         1759    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
-    0x0001c0c4   0x00000004   Code   RO         1762    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
-    0x0001c0c8   0x00000000   Code   RO         1764    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
-    0x0001c0c8   0x00000000   Code   RO         1766    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
-    0x0001c0c8   0x00000008   Code   RO         1767    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
-    0x0001c0d0   0x00000000   Code   RO         1769    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
-    0x0001c0d0   0x00000000   Code   RO         1771    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
-    0x0001c0d0   0x00000004   Code   RO         1760    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x0001c000   0x000000c0   Data   RO          360    RESET               arm_startup_nrf51.o
+    0x0001c0c0   0x00000000   Code   RO         1745  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x0001c0c0   0x00000004   Code   RO         1765    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x0001c0c4   0x00000004   Code   RO         1768    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x0001c0c8   0x00000000   Code   RO         1770    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x0001c0c8   0x00000000   Code   RO         1772    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x0001c0c8   0x00000008   Code   RO         1773    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x0001c0d0   0x00000000   Code   RO         1775    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x0001c0d0   0x00000000   Code   RO         1777    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x0001c0d0   0x00000004   Code   RO         1766    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
     0x0001c0d4   0x0000001e   Code   RO          211    .emb_text           led_patterns.o
     0x0001c0f2   0x00000002   PAD
-    0x0001c0f4   0x0000001e   Code   RO          637    .emb_text           nrf_delay.o
+    0x0001c0f4   0x0000001e   Code   RO          643    .emb_text           nrf_delay.o
     0x0001c112   0x00000002   PAD
-    0x0001c114   0x0000001e   Code   RO         1420    .emb_text           app_timer.o
+    0x0001c114   0x0000001e   Code   RO         1426    .emb_text           app_timer.o
     0x0001c132   0x00000002   PAD
-    0x0001c134   0x00000038   Code   RO          355    .text               arm_startup_nrf51.o
-    0x0001c16c   0x0000002c   Code   RO         1742    .text               mc_p.l(uidiv.o)
-    0x0001c198   0x00000028   Code   RO         1744    .text               mc_p.l(idiv.o)
-    0x0001c1c0   0x00000024   Code   RO         1746    .text               mc_p.l(rand.o)
-    0x0001c1e4   0x00000024   Code   RO         1749    .text               mc_p.l(memcpya.o)
-    0x0001c208   0x00000024   Code   RO         1751    .text               mc_p.l(memseta.o)
-    0x0001c22c   0x00000024   Code   RO         1773    .text               mc_p.l(init.o)
-    0x0001c250   0x00000108   Code   RO          661    i.GPIOTE_IRQHandler  nrf_drv_gpiote.o
-    0x0001c358   0x00000044   Code   RO         1421    i.NVIC_SetPriority  app_timer.o
-    0x0001c39c   0x00000020   Code   RO         1422    i.RTC1_IRQHandler   app_timer.o
-    0x0001c3bc   0x00000008   Code   RO         1423    i.SWI0_IRQHandler   app_timer.o
-    0x0001c3c4   0x00000020   Code   RO         1650    i.SWI2_IRQHandler   softdevice_handler.o
-    0x0001c3e4   0x000000a0   Code   RO          362    i.SystemInit        system_nrf51.o
-    0x0001c484   0x00000008   Code   RO          854    i.UART0_IRQHandler  nrf_drv_uart.o
+    0x0001c134   0x00000038   Code   RO          361    .text               arm_startup_nrf51.o
+    0x0001c16c   0x0000002c   Code   RO         1748    .text               mc_p.l(uidiv.o)
+    0x0001c198   0x00000028   Code   RO         1750    .text               mc_p.l(idiv.o)
+    0x0001c1c0   0x00000024   Code   RO         1752    .text               mc_p.l(rand.o)
+    0x0001c1e4   0x00000024   Code   RO         1755    .text               mc_p.l(memcpya.o)
+    0x0001c208   0x00000024   Code   RO         1757    .text               mc_p.l(memseta.o)
+    0x0001c22c   0x00000024   Code   RO         1779    .text               mc_p.l(init.o)
+    0x0001c250   0x00000108   Code   RO          667    i.GPIOTE_IRQHandler  nrf_drv_gpiote.o
+    0x0001c358   0x00000044   Code   RO         1427    i.NVIC_SetPriority  app_timer.o
+    0x0001c39c   0x00000020   Code   RO         1428    i.RTC1_IRQHandler   app_timer.o
+    0x0001c3bc   0x00000008   Code   RO         1429    i.SWI0_IRQHandler   app_timer.o
+    0x0001c3c4   0x00000020   Code   RO         1656    i.SWI2_IRQHandler   softdevice_handler.o
+    0x0001c3e4   0x000000a0   Code   RO          368    i.SystemInit        system_nrf51.o
+    0x0001c484   0x00000008   Code   RO          860    i.UART0_IRQHandler  nrf_drv_uart.o
     0x0001c48c   0x0000001a   Code   RO           45    i.__ARM_common_switch8  main.o
-    0x0001c4a6   0x0000000e   Code   RO         1777    i.__scatterload_copy  mc_p.l(handlers.o)
-    0x0001c4b4   0x00000002   Code   RO         1778    i.__scatterload_null  mc_p.l(handlers.o)
-    0x0001c4b6   0x0000000e   Code   RO         1779    i.__scatterload_zeroinit  mc_p.l(handlers.o)
-    0x0001c4c4   0x00000216   Code   RO          454    i.adv_data_encode   ble_advdata.o
+    0x0001c4a6   0x0000000e   Code   RO         1783    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x0001c4b4   0x00000002   Code   RO         1784    i.__scatterload_null  mc_p.l(handlers.o)
+    0x0001c4b6   0x0000000e   Code   RO         1785    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x0001c4c4   0x00000216   Code   RO          460    i.adv_data_encode   ble_advdata.o
     0x0001c6da   0x00000002   PAD
-    0x0001c6dc   0x00000078   Code   RO          289    i.advertising_init  bluetooth.o
-    0x0001c754   0x0000001c   Code   RO          290    i.advertising_start  bluetooth.o
+    0x0001c6dc   0x00000078   Code   RO          295    i.advertising_init  bluetooth.o
+    0x0001c754   0x0000001c   Code   RO          296    i.advertising_start  bluetooth.o
     0x0001c770   0x00000074   Code   RO          212    i.alternateOrange   led_patterns.o
-    0x0001c7e4   0x0000001c   Code   RO         1301    i.app_error_fault_handler  app_error.o
-    0x0001c800   0x00000018   Code   RO         1303    i.app_error_handler_bare  app_error.o
-    0x0001c818   0x00000090   Code   RO         1427    i.app_timer_init    app_timer.o
+    0x0001c7e4   0x0000001c   Code   RO         1307    i.app_error_fault_handler  app_error.o
+    0x0001c800   0x00000018   Code   RO         1309    i.app_error_handler_bare  app_error.o
+    0x0001c818   0x00000090   Code   RO         1433    i.app_timer_init    app_timer.o
     0x0001c8a8   0x00000050   Code   RO            4    i.battery_level_get  main.o
-    0x0001c8f8   0x00000068   Code   RO          455    i.ble_advdata_set   ble_advdata.o
-    0x0001c960   0x0000005e   Code   RO          456    i.ble_device_addr_encode  ble_advdata.o
+    0x0001c8f8   0x00000068   Code   RO          461    i.ble_advdata_set   ble_advdata.o
+    0x0001c960   0x0000005e   Code   RO          462    i.ble_device_addr_encode  ble_advdata.o
     0x0001c9be   0x00000002   PAD
-    0x0001c9c0   0x00000054   Code   RO          291    i.ble_stack_init    bluetooth.o
-    0x0001ca14   0x0000001c   Code   RO          662    i.channel_free      nrf_drv_gpiote.o
-    0x0001ca30   0x00000048   Code   RO          663    i.channel_port_alloc  nrf_drv_gpiote.o
-    0x0001ca78   0x00000010   Code   RO          664    i.channel_port_get  nrf_drv_gpiote.o
-    0x0001ca88   0x000000a8   Code   RO         1431    i.compare_reg_update  app_timer.o
-    0x0001cb30   0x00000088   Code   RO          457    i.conn_int_encode   ble_advdata.o
-    0x0001cbb8   0x00000040   Code   RO         1432    i.elapsed_ticks_acquire  app_timer.o
+    0x0001c9c0   0x00000054   Code   RO          297    i.ble_stack_init    bluetooth.o
+    0x0001ca14   0x0000001c   Code   RO          668    i.channel_free      nrf_drv_gpiote.o
+    0x0001ca30   0x00000048   Code   RO          669    i.channel_port_alloc  nrf_drv_gpiote.o
+    0x0001ca78   0x00000010   Code   RO          670    i.channel_port_get  nrf_drv_gpiote.o
+    0x0001ca88   0x000000a8   Code   RO         1437    i.compare_reg_update  app_timer.o
+    0x0001cb30   0x00000088   Code   RO          463    i.conn_int_encode   ble_advdata.o
+    0x0001cbb8   0x00000040   Code   RO         1438    i.elapsed_ticks_acquire  app_timer.o
     0x0001cbf8   0x00000090   Code   RO          213    i.eyes              led_patterns.o
-    0x0001cc88   0x00000098   Code   RO            5    i.in_pin_handler    main.o
-    0x0001cd20   0x00000078   Code   RO         1651    i.intern_softdevice_events_execute  softdevice_handler.o
-    0x0001cd98   0x00000048   Code   RO          363    i.is_manual_peripheral_setup_needed  system_nrf51.o
-    0x0001cde0   0x000000d4   Code   RO          214    i.knightRider       led_patterns.o
-    0x0001ceb4   0x00000054   Code   RO          458    i.le_role_encode    ble_advdata.o
-    0x0001cf08   0x00000024   Code   RO          215    i.led_wait_ms       led_patterns.o
-    0x0001cf2c   0x00000024   Code   RO          216    i.led_wait_us       led_patterns.o
-    0x0001cf50   0x000000bc   Code   RO         1433    i.list_deletions_handler  app_timer.o
-    0x0001d00c   0x000000d4   Code   RO         1434    i.list_insertions_handler  app_timer.o
-    0x0001d0e0   0x00000088   Code   RO            6    i.main              main.o
-    0x0001d168   0x00000068   Code   RO          459    i.manuf_specific_data_encode  ble_advdata.o
-    0x0001d1d0   0x0000009e   Code   RO          460    i.name_encode       ble_advdata.o
-    0x0001d26e   0x00000002   PAD
-    0x0001d270   0x0000001c   Code   RO          638    i.nrf_delay_ms      nrf_delay.o
-    0x0001d28c   0x00000060   Code   RO          605    i.nrf_drv_common_irq_enable  nrf_drv_common.o
-    0x0001d2ec   0x000000a0   Code   RO          667    i.nrf_drv_gpiote_in_event_enable  nrf_drv_gpiote.o
-    0x0001d38c   0x000000a4   Code   RO          668    i.nrf_drv_gpiote_in_init  nrf_drv_gpiote.o
-    0x0001d430   0x00000014   Code   RO          669    i.nrf_drv_gpiote_in_is_set  nrf_drv_gpiote.o
-    0x0001d444   0x00000054   Code   RO          671    i.nrf_drv_gpiote_init  nrf_drv_gpiote.o
-    0x0001d498   0x00000098   Code   RO          674    i.nrf_drv_gpiote_out_init  nrf_drv_gpiote.o
-    0x0001d530   0x00000024   Code   RO          684    i.nrf_gpio_cfg      nrf_drv_gpiote.o
-    0x0001d554   0x00000020   Code   RO          686    i.nrf_gpio_cfg_sense_set  nrf_drv_gpiote.o
-    0x0001d574   0x00000014   Code   RO          687    i.nrf_gpiote_event_is_set  nrf_drv_gpiote.o
-    0x0001d588   0x0000000a   Code   RO          870    i.nrf_uart_event_check  nrf_drv_uart.o
-    0x0001d592   0x00000010   Code   RO          871    i.nrf_uart_int_enable_check  nrf_drv_uart.o
-    0x0001d5a2   0x00000002   PAD
-    0x0001d5a4   0x00000018   Code   RO          688    i.pin_in_use_by_port  nrf_drv_gpiote.o
-    0x0001d5bc   0x00000018   Code   RO          689    i.pin_in_use_by_te  nrf_drv_gpiote.o
-    0x0001d5d4   0x00000060   Code   RO            7    i.prettyLEDs        main.o
-    0x0001d634   0x0000002c   Code   RO          217    i.redEyes           led_patterns.o
-    0x0001d660   0x00000044   Code   RO         1435    i.rtc1_stop         app_timer.o
-    0x0001d6a4   0x00000038   Code   RO          872    i.rx_byte           nrf_drv_uart.o
-    0x0001d6dc   0x0000001c   Code   RO          873    i.rx_done_event     nrf_drv_uart.o
-    0x0001d6f8   0x00000010   Code   RO         1652    i.sd_check_ram_start  softdevice_handler.o
-    0x0001d708   0x0000008e   Code   RO          461    i.service_data_encode  ble_advdata.o
-    0x0001d796   0x00000002   PAD
-    0x0001d798   0x000000b4   Code   RO          218    i.showBatteryStat   led_patterns.o
-    0x0001d84c   0x00000014   Code   RO         1654    i.softdevice_enable  softdevice_handler.o
-    0x0001d860   0x00000028   Code   RO         1655    i.softdevice_enable_get_default_config  softdevice_handler.o
-    0x0001d888   0x00000008   Code   RO         1656    i.softdevice_fault_handler  softdevice_handler.o
-    0x0001d890   0x00000030   Code   RO         1657    i.softdevice_handler_init  softdevice_handler.o
-    0x0001d8c0   0x0000010c   Code   RO          219    i.strobeEyes        led_patterns.o
-    0x0001d9cc   0x00000084   Code   RO         1436    i.timer_list_handler  app_timer.o
-    0x0001da50   0x00000010   Code   RO         1437    i.timer_list_handler_sched  app_timer.o
-    0x0001da60   0x00000040   Code   RO         1438    i.timer_list_insert  app_timer.o
-    0x0001daa0   0x00000080   Code   RO         1439    i.timer_timeouts_check  app_timer.o
-    0x0001db20   0x0000002c   Code   RO          875    i.tx_byte           nrf_drv_uart.o
-    0x0001db4c   0x00000020   Code   RO          876    i.tx_done_event     nrf_drv_uart.o
-    0x0001db6c   0x00000128   Code   RO          877    i.uart_irq_handler  nrf_drv_uart.o
-    0x0001dc94   0x0000000a   Code   RO          462    i.uint16_encode     ble_advdata.o
-    0x0001dc9e   0x00000030   Code   RO          463    i.uuid_list_encode  ble_advdata.o
-    0x0001dcce   0x000000ae   Code   RO          464    i.uuid_list_sized_encode  ble_advdata.o
-    0x0001dd7c   0x00000048   Data   RO            9    .constdata          main.o
-    0x0001ddc4   0x00000028   Data   RO          220    .constdata          led_patterns.o
-    0x0001ddec   0x00000004   Data   RO          293    .constdata          bluetooth.o
-    0x0001ddf0   0x00000020   Data   RO         1775    Region$$Table       anon$$obj.o
+    0x0001cc88   0x000000b8   Code   RO            5    i.in_pin_handler    main.o
+    0x0001cd40   0x00000078   Code   RO         1657    i.intern_softdevice_events_execute  softdevice_handler.o
+    0x0001cdb8   0x00000048   Code   RO          369    i.is_manual_peripheral_setup_needed  system_nrf51.o
+    0x0001ce00   0x000000d4   Code   RO          214    i.knightRider       led_patterns.o
+    0x0001ced4   0x00000054   Code   RO          464    i.le_role_encode    ble_advdata.o
+    0x0001cf28   0x00000024   Code   RO          215    i.led_wait_ms       led_patterns.o
+    0x0001cf4c   0x00000024   Code   RO          216    i.led_wait_us       led_patterns.o
+    0x0001cf70   0x000000bc   Code   RO         1439    i.list_deletions_handler  app_timer.o
+    0x0001d02c   0x000000d4   Code   RO         1440    i.list_insertions_handler  app_timer.o
+    0x0001d100   0x00000088   Code   RO            6    i.main              main.o
+    0x0001d188   0x00000068   Code   RO          465    i.manuf_specific_data_encode  ble_advdata.o
+    0x0001d1f0   0x0000009e   Code   RO          466    i.name_encode       ble_advdata.o
+    0x0001d28e   0x00000002   PAD
+    0x0001d290   0x0000001c   Code   RO          644    i.nrf_delay_ms      nrf_delay.o
+    0x0001d2ac   0x00000060   Code   RO          611    i.nrf_drv_common_irq_enable  nrf_drv_common.o
+    0x0001d30c   0x000000a0   Code   RO          673    i.nrf_drv_gpiote_in_event_enable  nrf_drv_gpiote.o
+    0x0001d3ac   0x000000a4   Code   RO          674    i.nrf_drv_gpiote_in_init  nrf_drv_gpiote.o
+    0x0001d450   0x00000014   Code   RO          675    i.nrf_drv_gpiote_in_is_set  nrf_drv_gpiote.o
+    0x0001d464   0x00000054   Code   RO          677    i.nrf_drv_gpiote_init  nrf_drv_gpiote.o
+    0x0001d4b8   0x00000098   Code   RO          680    i.nrf_drv_gpiote_out_init  nrf_drv_gpiote.o
+    0x0001d550   0x00000024   Code   RO          690    i.nrf_gpio_cfg      nrf_drv_gpiote.o
+    0x0001d574   0x00000020   Code   RO          692    i.nrf_gpio_cfg_sense_set  nrf_drv_gpiote.o
+    0x0001d594   0x00000014   Code   RO          693    i.nrf_gpiote_event_is_set  nrf_drv_gpiote.o
+    0x0001d5a8   0x0000000a   Code   RO          876    i.nrf_uart_event_check  nrf_drv_uart.o
+    0x0001d5b2   0x00000010   Code   RO          877    i.nrf_uart_int_enable_check  nrf_drv_uart.o
+    0x0001d5c2   0x00000002   PAD
+    0x0001d5c4   0x00000018   Code   RO          694    i.pin_in_use_by_port  nrf_drv_gpiote.o
+    0x0001d5dc   0x00000018   Code   RO          695    i.pin_in_use_by_te  nrf_drv_gpiote.o
+    0x0001d5f4   0x0000008c   Code   RO            7    i.prettyLEDs        main.o
+    0x0001d680   0x0000002c   Code   RO          217    i.redEyes           led_patterns.o
+    0x0001d6ac   0x00000044   Code   RO         1441    i.rtc1_stop         app_timer.o
+    0x0001d6f0   0x00000038   Code   RO          878    i.rx_byte           nrf_drv_uart.o
+    0x0001d728   0x0000001c   Code   RO          879    i.rx_done_event     nrf_drv_uart.o
+    0x0001d744   0x00000010   Code   RO         1658    i.sd_check_ram_start  softdevice_handler.o
+    0x0001d754   0x0000004c   Code   RO          218    i.seizureMode       led_patterns.o
+    0x0001d7a0   0x0000008e   Code   RO          467    i.service_data_encode  ble_advdata.o
+    0x0001d82e   0x00000002   PAD
+    0x0001d830   0x000000b4   Code   RO          219    i.showBatteryStat   led_patterns.o
+    0x0001d8e4   0x00000014   Code   RO         1660    i.softdevice_enable  softdevice_handler.o
+    0x0001d8f8   0x00000028   Code   RO         1661    i.softdevice_enable_get_default_config  softdevice_handler.o
+    0x0001d920   0x00000008   Code   RO         1662    i.softdevice_fault_handler  softdevice_handler.o
+    0x0001d928   0x00000030   Code   RO         1663    i.softdevice_handler_init  softdevice_handler.o
+    0x0001d958   0x0000010c   Code   RO          220    i.strobeEyes        led_patterns.o
+    0x0001da64   0x00000084   Code   RO         1442    i.timer_list_handler  app_timer.o
+    0x0001dae8   0x00000010   Code   RO         1443    i.timer_list_handler_sched  app_timer.o
+    0x0001daf8   0x00000040   Code   RO         1444    i.timer_list_insert  app_timer.o
+    0x0001db38   0x00000080   Code   RO         1445    i.timer_timeouts_check  app_timer.o
+    0x0001dbb8   0x0000002c   Code   RO          881    i.tx_byte           nrf_drv_uart.o
+    0x0001dbe4   0x00000020   Code   RO          882    i.tx_done_event     nrf_drv_uart.o
+    0x0001dc04   0x00000128   Code   RO          883    i.uart_irq_handler  nrf_drv_uart.o
+    0x0001dd2c   0x0000000a   Code   RO          468    i.uint16_encode     ble_advdata.o
+    0x0001dd36   0x00000030   Code   RO          469    i.uuid_list_encode  ble_advdata.o
+    0x0001dd66   0x000000ae   Code   RO          470    i.uuid_list_sized_encode  ble_advdata.o
+    0x0001de14   0x00000048   Data   RO            9    .constdata          main.o
+    0x0001de5c   0x00000028   Data   RO          221    .constdata          led_patterns.o
+    0x0001de84   0x00000004   Data   RO          299    .constdata          bluetooth.o
+    0x0001de88   0x00000020   Data   RO         1781    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20002800, Size: 0x00000af8, Max: 0x00002000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Base: 0x20002800, Size: 0x00000b00, Max: 0x00002000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20002800   0x00000028   Data   RW           10    .data               main.o
-    0x20002828   0x00000004   Data   RW          221    .data               led_patterns.o
-    0x2000282c   0x00000004   Data   RW          364    .data               system_nrf51.o
-    0x20002830   0x00000020   Data   RW         1442    .data               app_timer.o
-    0x20002850   0x00000014   Data   RW         1661    .data               softdevice_handler.o
-    0x20002864   0x00000004   Data   RW         1747    .data               mc_p.l(rand.o)
-    0x20002868   0x000001c8   Zero   RW            8    .bss                main.o
-    0x20002a30   0x00000060   Zero   RW          292    .bss                bluetooth.o
-    0x20002a90   0x00000048   Zero   RW          690    .bss                nrf_drv_gpiote.o
-    0x20002ad8   0x0000001c   Zero   RW          878    .bss                nrf_drv_uart.o
-    0x20002af4   0x00000004   PAD
-    0x20002af8   0x00000800   Zero   RW          352    STACK               arm_startup_nrf51.o
+    0x20002800   0x00000034   Data   RW           10    .data               main.o
+    0x20002834   0x00000004   Data   RW          222    .data               led_patterns.o
+    0x20002838   0x00000004   Data   RW          370    .data               system_nrf51.o
+    0x2000283c   0x00000020   Data   RW         1448    .data               app_timer.o
+    0x2000285c   0x00000014   Data   RW         1667    .data               softdevice_handler.o
+    0x20002870   0x00000004   Data   RW         1753    .data               mc_p.l(rand.o)
+    0x20002874   0x000001c8   Zero   RW            8    .bss                main.o
+    0x20002a3c   0x00000060   Zero   RW          298    .bss                bluetooth.o
+    0x20002a9c   0x00000048   Zero   RW          696    .bss                nrf_drv_gpiote.o
+    0x20002ae4   0x0000001c   Zero   RW          884    .bss                nrf_drv_uart.o
+    0x20002b00   0x00000800   Zero   RW          358    STACK               arm_startup_nrf51.o
 
 
 ==============================================================================
@@ -1102,8 +1109,8 @@ Image component sizes
         56         18        192          0       2048        680   arm_startup_nrf51.o
       1588          6          0          0          0      18868   ble_advdata.o
        232         30          4          0         96       6700   bluetooth.o
-      1066         96         40          4          0       6871   led_patterns.o
-       490         84         72         40        456      73920   main.o
+      1142        110         40          4          0       7381   led_patterns.o
+       566         84         72         52        456      74336   main.o
         58          4          0          0          0       1683   nrf_delay.o
         96         18          0          0          0       8584   nrf_drv_common.o
       1096        140          0          0         72      22077   nrf_drv_gpiote.o
@@ -1112,9 +1119,9 @@ Image component sizes
        232         36          0          4          0       2183   system_nrf51.o
 
     ----------------------------------------------------------------------
-      7078        656        340        100       2704     198367   Object Totals
+      7230        670        340        112       2700     199293   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        16          0          0          0          4          0   (incl. Padding)
+        16          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1156,15 +1163,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7356        684        340        104       2704     195511   Grand Totals
-      7356        684        340        104       2704     195511   ELF Image Totals
-      7356        684        340        104          0          0   ROM Totals
+      7508        698        340        116       2700     196393   Grand Totals
+      7508        698        340        116       2700     196393   ELF Image Totals
+      7508        698        340        116          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7696 (   7.52kB)
-    Total RW  Size (RW Data + ZI Data)              2808 (   2.74kB)
-    Total ROM Size (Code + RO Data + RW Data)       7800 (   7.62kB)
+    Total RO  Size (Code + RO Data)                 7848 (   7.66kB)
+    Total RW  Size (RW Data + ZI Data)              2816 (   2.75kB)
+    Total ROM Size (Code + RO Data + RW Data)       7964 (   7.78kB)
 
 ==============================================================================
 

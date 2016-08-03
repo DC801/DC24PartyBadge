@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\_build\nrf51422_xxac_s130.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\_build\nrf51422_xxac_s130.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Tue Aug 02 18:19:04 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060183: Last Updated: Tue Aug 02 23:20:18 2016
 <BR><P>
 <H3>Maximum Stack Usage =        400 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -69,7 +69,7 @@ Global Symbols
 <P><STRONG><a name="[21]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(.text)
 </UL>
-<P><STRONG><a name="[75]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[76]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[24]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -79,15 +79,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[25]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[76]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[77]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[77]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[78]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[78]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[79]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[79]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[7a]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[7a]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[7b]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[26]"></a>__asm___14_led_patterns_c_6fa907a9__nrf_delay_us</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, led_patterns.o(.emb_text))
 <BR><BR>[Calls]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__asm___14_led_patterns_c_6fa907a9__nrf_delay_us
@@ -213,7 +213,7 @@ Global Symbols
 <P><STRONG><a name="[15]"></a>WDT_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, arm_startup_nrf51.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> arm_startup_nrf51.o(RESET)
 </UL>
-<P><STRONG><a name="[7b]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[7c]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[2a]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_uidivmod
@@ -222,7 +222,7 @@ Global Symbols
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
 </UL>
 
-<P><STRONG><a name="[7c]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, idiv.o(.text), UNUSED)
+<P><STRONG><a name="[7d]"></a>__aeabi_idiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, idiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[29]"></a>__aeabi_idivmod</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, idiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = __aeabi_idivmod &rArr; __aeabi_uidivmod
@@ -236,7 +236,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alternateOrange
 </UL>
 
-<P><STRONG><a name="[7d]"></a>srand</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, rand.o(.text), UNUSED)
+<P><STRONG><a name="[7e]"></a>srand</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, rand.o(.text), UNUSED)
 
 <P><STRONG><a name="[4e]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;service_data_encode
@@ -251,16 +251,16 @@ Global Symbols
 <LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;in_pin_handler
 </UL>
 
-<P><STRONG><a name="[7e]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[7f]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[2c]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[7f]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[80]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[80]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[81]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[2b]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -271,7 +271,7 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;advertising_init
 </UL>
 
-<P><STRONG><a name="[81]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[82]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[2d]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -283,7 +283,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[82]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[83]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[b]"></a>GPIOTE_IRQHandler</STRONG> (Thumb, 234 bytes, Stack size 24 bytes, nrf_drv_gpiote.o(i.GPIOTE_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIOTE_IRQHandler
@@ -337,11 +337,11 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prettyLEDs
 </UL>
 
-<P><STRONG><a name="[83]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[84]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[84]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[85]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[85]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[86]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[38]"></a>adv_data_encode</STRONG> (Thumb, 534 bytes, Stack size 48 bytes, ble_advdata.o(i.adv_data_encode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
@@ -444,8 +444,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[22]"></a>in_pin_handler</STRONG> (Thumb, 128 bytes, Stack size 40 bytes, main.o(i.in_pin_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = in_pin_handler &rArr; nrf_delay_ms
+<P><STRONG><a name="[22]"></a>in_pin_handler</STRONG> (Thumb, 160 bytes, Stack size 48 bytes, main.o(i.in_pin_handler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = in_pin_handler &rArr; nrf_delay_ms
 </UL>
 <BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_is_set
 <LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_delay_ms
@@ -476,6 +476,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;showBatteryStat
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;seizureMode
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redEyes
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;knightRider
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alternateOrange
@@ -578,6 +579,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_stack_init
 </UL>
 
+<P><STRONG><a name="[6b]"></a>seizureMode</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, led_patterns.o(i.seizureMode))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = seizureMode &rArr; led_wait_ms &rArr; nrf_delay_ms
+</UL>
+<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;led_wait_ms
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eyes
+</UL>
+<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prettyLEDs
+</UL>
+
 <P><STRONG><a name="[6a]"></a>showBatteryStat</STRONG> (Thumb, 166 bytes, Stack size 24 bytes, led_patterns.o(i.showBatteryStat))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = showBatteryStat &rArr; led_wait_ms &rArr; nrf_delay_ms
 </UL>
@@ -625,11 +635,12 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[61]"></a>prettyLEDs</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, main.o(i.prettyLEDs))
+<P><STRONG><a name="[61]"></a>prettyLEDs</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, main.o(i.prettyLEDs))
 <BR><BR>[Stack]<UL><LI>Max Depth = 344<LI>Call Chain = prettyLEDs &rArr; advertising_init &rArr; ble_advdata_set &rArr; adv_data_encode &rArr; uuid_list_encode &rArr; uuid_list_sized_encode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strobeEyes
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;showBatteryStat
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;seizureMode
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redEyes
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;knightRider
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;alternateOrange
@@ -646,6 +657,7 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_switch8
 </UL>
 <BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strobeEyes
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;seizureMode
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;redEyes
 </UL>
 
@@ -709,12 +721,12 @@ Local Symbols
 <P><STRONG><a name="[3c]"></a>uuid_list_encode</STRONG> (Thumb, 48 bytes, Stack size 48 bytes, ble_advdata.o(i.uuid_list_encode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = uuid_list_encode &rArr; uuid_list_sized_encode
 </UL>
-<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_sized_encode
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_sized_encode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adv_data_encode
 </UL>
 
-<P><STRONG><a name="[74]"></a>uuid_list_sized_encode</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, ble_advdata.o(i.uuid_list_sized_encode))
+<P><STRONG><a name="[75]"></a>uuid_list_sized_encode</STRONG> (Thumb, 174 bytes, Stack size 48 bytes, ble_advdata.o(i.uuid_list_sized_encode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = uuid_list_sized_encode
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uuid_list_encode
@@ -760,31 +772,31 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_gpiote_in_event_enable
 </UL>
 
-<P><STRONG><a name="[6f]"></a>nrf_uart_event_check</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.nrf_uart_event_check))
+<P><STRONG><a name="[70]"></a>nrf_uart_event_check</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.nrf_uart_event_check))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
 </UL>
 
-<P><STRONG><a name="[6e]"></a>nrf_uart_int_enable_check</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.nrf_uart_int_enable_check))
+<P><STRONG><a name="[6f]"></a>nrf_uart_int_enable_check</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.nrf_uart_int_enable_check))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
 </UL>
 
-<P><STRONG><a name="[70]"></a>rx_byte</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, nrf_drv_uart.o(i.rx_byte))
+<P><STRONG><a name="[71]"></a>rx_byte</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, nrf_drv_uart.o(i.rx_byte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = rx_byte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
 </UL>
 
-<P><STRONG><a name="[71]"></a>rx_done_event</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, nrf_drv_uart.o(i.rx_done_event))
+<P><STRONG><a name="[72]"></a>rx_done_event</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, nrf_drv_uart.o(i.rx_done_event))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = rx_done_event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
 </UL>
 
-<P><STRONG><a name="[72]"></a>tx_byte</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.tx_byte))
+<P><STRONG><a name="[73]"></a>tx_byte</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, nrf_drv_uart.o(i.tx_byte))
 <BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
 </UL>
 
-<P><STRONG><a name="[73]"></a>tx_done_event</STRONG> (Thumb, 26 bytes, Stack size 24 bytes, nrf_drv_uart.o(i.tx_done_event))
+<P><STRONG><a name="[74]"></a>tx_done_event</STRONG> (Thumb, 26 bytes, Stack size 24 bytes, nrf_drv_uart.o(i.tx_done_event))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = tx_done_event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_irq_handler
@@ -793,12 +805,12 @@ Local Symbols
 <P><STRONG><a name="[37]"></a>uart_irq_handler</STRONG> (Thumb, 278 bytes, Stack size 40 bytes, nrf_drv_uart.o(i.uart_irq_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = uart_irq_handler &rArr; tx_done_event
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_done_event
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_byte
-<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_done_event
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_byte
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_uart_int_enable_check
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_uart_event_check
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_done_event
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tx_byte
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_done_event
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rx_byte
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_uart_int_enable_check
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_uart_event_check
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART0_IRQHandler
 </UL>
@@ -816,13 +828,13 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler
 </UL>
 
-<P><STRONG><a name="[6b]"></a>elapsed_ticks_acquire</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, app_timer.o(i.elapsed_ticks_acquire))
+<P><STRONG><a name="[6c]"></a>elapsed_ticks_acquire</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, app_timer.o(i.elapsed_ticks_acquire))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = elapsed_ticks_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler
 </UL>
 
-<P><STRONG><a name="[6c]"></a>list_deletions_handler</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, app_timer.o(i.list_deletions_handler))
+<P><STRONG><a name="[6d]"></a>list_deletions_handler</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, app_timer.o(i.list_deletions_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = list_deletions_handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler
@@ -849,14 +861,14 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = timer_list_handler &rArr; compare_reg_update &rArr; rtc1_stop
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_insertions_handler
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_deletions_handler
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elapsed_ticks_acquire
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;list_deletions_handler
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;elapsed_ticks_acquire
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compare_reg_update
 </UL>
 <BR>[Called By]<UL><LI><a href="#[19]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SWI0_IRQHandler
 </UL>
 
-<P><STRONG><a name="[6d]"></a>timer_list_handler_sched</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, app_timer.o(i.timer_list_handler_sched))
+<P><STRONG><a name="[6e]"></a>timer_list_handler_sched</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, app_timer.o(i.timer_list_handler_sched))
 <BR><BR>[Called By]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_timeouts_check
 </UL>
 
@@ -870,7 +882,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = timer_timeouts_check &rArr; app_error_handler_bare
 </UL>
 <BR>[Calls]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler_sched
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_list_handler_sched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC1_IRQHandler
 </UL>

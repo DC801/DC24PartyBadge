@@ -29,7 +29,7 @@ Project File Date:  08/02/2016
 Build target 'nrf51422_xxac_s130'
 compiling led_patterns.c...
 linking...
-Program Size: Code=7356 RO-data=340 RW-data=104 ZI-data=2704  
+Program Size: Code=7508 RO-data=340 RW-data=116 ZI-data=2700  
 FromELF: creating hex file...
 ".\_build\nrf51422_xxac_s130.axf" - 0 Error(s), 0 Warning(s).
 
@@ -42,33 +42,47 @@ Package Vendor: ARM
    * Component: CORE Version: 4.3.0
 
 Package Vendor: NordicSemiconductor
-                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_BLE/NordicSemiconductor.nRF_BLE.4.0.0-2.alpha.pack
-                NordicSemiconductor::nRF_BLE:BLE_Modules:ble_advdata:4.0.0-2.alpha
-                Bluetooth Low Energy (Bluetooth Smart) services and software modules for Nordic Semiconductor nRF family.
-   * Component: ble_advdata Version: 4.0.0-2.alpha
-   * Component: ble_common Version: 4.0.0-2.alpha
-   * Component: ble_service_common Version: 4.0.0-2.alpha
-   * Component: ble_conn_params Version: 4.0.0-2.alpha
-
-Package Vendor: NordicSemiconductor
-                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1.pack
-                NordicSemiconductor::Device:Startup:8.3.1
-                Nordic Semiconductor nRF ARM devices Device Family Pack.
-   * Component: Startup Version: 8.3.1
-
-Package Vendor: NordicSemiconductor
                 http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_Drivers/NordicSemiconductor.nRF_Drivers.4.0.0-2.alpha.pack
-                NordicSemiconductor::nRF_Drivers:nrf_drv_gpiote:4.0.0-2.alpha
+                NordicSemiconductor::nRF_Drivers:nrf_delay:4.0.0-2.alpha
                 Drivers for Nordic Semiconductor nRF family.
-   * Component: nrf_drv_gpiote Version: 4.0.0-2.alpha
-   * Component: nrf_drv_uart Version: 4.0.0-2.alpha
-   * Component: nrf_drv_common Version: 4.0.0-2.alpha
    * Component: nrf_delay Version: 4.0.0-2.alpha
    * Component: nrf_gpio Version: 4.0.0-2.alpha
-   * Component: nrf_gpiote Version: 4.0.0-2.alpha
    * Component: nrf_error Variant: default Version: 4.0.0-2.alpha
+   * Component: nrf_gpiote Version: 4.0.0-2.alpha
    * Component: nrf_uart Version: 4.0.0-2.alpha
+   * Component: nrf_drv_gpiote Version: 4.0.0-2.alpha
+   * Component: nrf_drv_common Version: 4.0.0-2.alpha
    * Component: nrf_uarte Version: 4.0.0-2.alpha
+   * Component: nrf_drv_uart Version: 4.0.0-2.alpha
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_SoftDevice_S130/NordicSemiconductor.nRF_SoftDevice_S130.2.0.0-7.alpha.pack
+                NordicSemiconductor::nRF_SoftDevice:s130:default:2.0.0-7.alpha
+                Components for Bluetooth Low Energy (Bluetooth Smart) S130 SoftDevice for Nordic Semiconductor nRF family.
+   * Component: s130 Variant: default Version: 2.0.0-7.alpha
+   * Component: s130_hex Version: 2.0.0-7.alpha
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_Libraries/NordicSemiconductor.nRF_Libraries.4.0.0-2.alpha.pack
+                NordicSemiconductor::nRF_Libraries:app_error:4.0.0-2.alpha
+                Software modules for Nordic Semiconductor nRF family.
+   * Component: app_error Version: 4.0.0-2.alpha
+   * Component: app_button Version: 4.0.0-2.alpha
+   * Component: nordic_common Version: 4.0.0-2.alpha
+   * Component: app_timer Variant: default Version: 4.0.0-2.alpha
+   * Component: app_fifo Version: 4.0.0-2.alpha
+   * Component: nrf_assert Version: 4.0.0-2.alpha
+   * Component: retarget Version: 4.0.0-2.alpha
+   * Component: nrf_log Variant: default Version: 4.0.0-2.alpha
+   * Component: app_util Variant: default Version: 4.0.0-2.alpha
+   * Component: app_uart Variant: Fifo Version: 4.0.0-2.alpha
+
+Package Vendor: NordicSemiconductor
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_SoftDevice_Common/NordicSemiconductor.nRF_SoftDevice_Common.2.0.0-2.alpha.pack
+                NordicSemiconductor::nRF_SoftDevice:Internal:sd_common:default:2.0.0-2.alpha
+                Common components for Nordic Semiconductor nRF family SoftDevices.
+   * Component: sd_common Variant: default Version: 2.0.0-2.alpha
+   * Component: softdevice_present Version: 2.0.0-2.alpha
 
 Package Vendor: NordicSemiconductor
                 http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_Drivers_External/NordicSemiconductor.nRF_Drivers_External.1.2.1-2.alpha.pack
@@ -83,33 +97,19 @@ Package Vendor: NordicSemiconductor
    * Component: bsp Variant: default Version: 11.0.0-2.alpha
 
 Package Vendor: NordicSemiconductor
-                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_Libraries/NordicSemiconductor.nRF_Libraries.4.0.0-2.alpha.pack
-                NordicSemiconductor::nRF_Libraries:app_error:4.0.0-2.alpha
-                Software modules for Nordic Semiconductor nRF family.
-   * Component: app_error Version: 4.0.0-2.alpha
-   * Component: nrf_assert Version: 4.0.0-2.alpha
-   * Component: app_button Version: 4.0.0-2.alpha
-   * Component: nrf_log Variant: default Version: 4.0.0-2.alpha
-   * Component: nordic_common Version: 4.0.0-2.alpha
-   * Component: app_uart Variant: Fifo Version: 4.0.0-2.alpha
-   * Component: app_util Variant: default Version: 4.0.0-2.alpha
-   * Component: app_fifo Version: 4.0.0-2.alpha
-   * Component: retarget Version: 4.0.0-2.alpha
-   * Component: app_timer Variant: default Version: 4.0.0-2.alpha
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_BLE/NordicSemiconductor.nRF_BLE.4.0.0-2.alpha.pack
+                NordicSemiconductor::nRF_BLE:BLE_Modules:ble_advdata:4.0.0-2.alpha
+                Bluetooth Low Energy (Bluetooth Smart) services and software modules for Nordic Semiconductor nRF family.
+   * Component: ble_advdata Version: 4.0.0-2.alpha
+   * Component: ble_common Version: 4.0.0-2.alpha
 
 Package Vendor: NordicSemiconductor
-                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_SoftDevice_Common/NordicSemiconductor.nRF_SoftDevice_Common.2.0.0-2.alpha.pack
-                NordicSemiconductor::nRF_SoftDevice:Internal:sd_common:default:2.0.0-2.alpha
-                Common components for Nordic Semiconductor nRF family SoftDevices.
-   * Component: sd_common Variant: default Version: 2.0.0-2.alpha
-   * Component: softdevice_present Version: 2.0.0-2.alpha
-
-Package Vendor: NordicSemiconductor
-                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_SoftDevice_S130/NordicSemiconductor.nRF_SoftDevice_S130.2.0.0-7.alpha.pack
-                NordicSemiconductor::nRF_SoftDevice:s130_hex:2.0.0-7.alpha
-                Components for Bluetooth Low Energy (Bluetooth Smart) S130 SoftDevice for Nordic Semiconductor nRF family.
-   * Component: s130_hex Version: 2.0.0-7.alpha
-   * Component: s130 Variant: default Version: 2.0.0-7.alpha
+                http://developer.nordicsemi.com/nRF51_SDK/pieces/nRF_DeviceFamilyPack/NordicSemiconductor.nRF_DeviceFamilyPack.8.3.1.pack
+                NordicSemiconductor::Device:Startup:8.3.1
+                Nordic Semiconductor nRF ARM devices Device Family Pack.
+   * Component: Startup Version: 8.3.1
+   * Component: ble_conn_params Version: 4.0.0-2.alpha
+   * Component: ble_service_common Version: 4.0.0-2.alpha
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\hamster\Documents\Development\DC801_DC24PartyBadge\Software\pca10028\s130\arm5\RTE
@@ -141,40 +141,6 @@ Package Vendor: NordicSemiconductor
 
    * Component: ARM::CMSIS:CORE:4.3.0
 
-   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_advdata:4.0.0-2.alpha
-      Source file:   common\ble_advdata.c
-      Include file:  common\ble_advdata.h
-
-   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_common:4.0.0-2.alpha
-
-   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_service_common:4.0.0-2.alpha
-      Include file:  common\ble_srv_common.h
-      Source file:   common\ble_srv_common.c
-
-   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_conn_params:4.0.0-2.alpha
-      Include file:  common\ble_conn_params.h
-      Source file:   common\ble_conn_params.c
-
-   * Component: NordicSemiconductor::Device:Startup:8.3.1
-      Source file:   Device\Source\arm\arm_startup_nrf51.s
-      Source file:   Device\Source\system_nrf51.c
-      Include file:  Device\Include\system_nrf51.h
-
-   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_gpiote:4.0.0-2.alpha
-      Source file:   gpiote\nrf_drv_gpiote.c
-      Include file:  gpiote\nrf_drv_gpiote.h
-      Include file:  config\nrf_drv_config.h
-
-   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_uart:4.0.0-2.alpha
-      Source file:   uart\nrf_drv_uart.c
-      Include file:  uart\nrf_drv_uart.h
-      Include file:  config\nrf_drv_config.h
-
-   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_common:4.0.0-2.alpha
-      Source file:   common\nrf_drv_common.c
-      Include file:  common\nrf_drv_common.h
-      Include file:  config\nrf_drv_config.h
-
    * Component: NordicSemiconductor::nRF_Drivers:nrf_delay:4.0.0-2.alpha
       Source file:   delay\nrf_delay.c
       Include file:  delay\nrf_delay.h
@@ -182,89 +148,123 @@ Package Vendor: NordicSemiconductor
    * Component: NordicSemiconductor::nRF_Drivers:nrf_gpio:4.0.0-2.alpha
       Include file:  hal\nrf_gpio.h
 
+   * Component: NordicSemiconductor::nRF_Drivers:nrf_error:default:4.0.0-2.alpha
+
    * Component: NordicSemiconductor::nRF_Drivers:nrf_gpiote:4.0.0-2.alpha
       Include file:  hal\nrf_gpiote.h
-
-   * Component: NordicSemiconductor::nRF_Drivers:nrf_error:default:4.0.0-2.alpha
 
    * Component: NordicSemiconductor::nRF_Drivers:nrf_uart:4.0.0-2.alpha
       Include file:  hal\nrf_uart.h
 
+   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_gpiote:4.0.0-2.alpha
+      Source file:   gpiote\nrf_drv_gpiote.c
+      Include file:  gpiote\nrf_drv_gpiote.h
+      Include file:  config\nrf_drv_config.h
+
+   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_common:4.0.0-2.alpha
+      Source file:   common\nrf_drv_common.c
+      Include file:  common\nrf_drv_common.h
+      Include file:  config\nrf_drv_config.h
+
    * Component: NordicSemiconductor::nRF_Drivers:nrf_uarte:4.0.0-2.alpha
       Include file:  hal\nrf_uarte.h
 
-   * Component: NordicSemiconductor::nRF_Libraries:segger_rtt:1.2.1-2.alpha
-      Source file:   segger_rtt\SEGGER_RTT.c
-      Include file:  segger_rtt\SEGGER_RTT_Conf.h
-      Source file:   segger_rtt\SEGGER_RTT_printf.c
-      Include file:  segger_rtt\SEGGER_RTT.h
-      Source file:   segger_rtt\RTT_Syscalls_KEIL.c
+   * Component: NordicSemiconductor::nRF_Drivers:nrf_drv_uart:4.0.0-2.alpha
+      Include file:  config\nrf_drv_config.h
+      Include file:  uart\nrf_drv_uart.h
+      Source file:   uart\nrf_drv_uart.c
 
-   * Component: NordicSemiconductor::Board Support:bsp:default:11.0.0-2.alpha
-      Source file:   bsp\bsp.c
+   * Component: NordicSemiconductor::nRF_SoftDevice:s130:default:2.0.0-7.alpha
+      Include file:  headers\ble_gatt.h
+      Include file:  headers\ble.h
+      Include file:  headers\ble_hci.h
+      Include file:  headers\nrf51\nrf_mbr.h
+      Include file:  headers\nrf_error.h
+      Include file:  headers\nrf_sd_def.h
+      Include file:  headers\nrf_error_soc.h
+      Include file:  headers\nrf_sdm.h
+      Include file:  headers\ble_gap.h
+      Include file:  headers\ble_gatts.h
+      Include file:  headers\ble_l2cap.h
+      Include file:  headers\nrf_soc.h
+      Include file:  headers\ble_err.h
+      Include file:  headers\ble_ranges.h
+      Include file:  headers\nrf_svc.h
+      Include file:  headers\softdevice_assert.h
+      Include file:  headers\ble_gattc.h
+      Include file:  headers\nrf_error_sdm.h
+      Include file:  headers\ble_types.h
+
+   * Component: NordicSemiconductor::nRF_SoftDevice:s130_hex:2.0.0-7.alpha
 
    * Component: NordicSemiconductor::nRF_Libraries:app_error:4.0.0-2.alpha
       Source file:   util\app_error.c
       Include file:  util\app_error.h
 
-   * Component: NordicSemiconductor::nRF_Libraries:nrf_assert:4.0.0-2.alpha
-      Include file:  util\nrf_assert.h
-      Source file:   util\nrf_assert.c
-
    * Component: NordicSemiconductor::nRF_Libraries:app_button:4.0.0-2.alpha
       Source file:   button\app_button.c
       Include file:  button\app_button.h
 
-   * Component: NordicSemiconductor::nRF_Libraries:nrf_log:default:4.0.0-2.alpha
-      Source file:   util\nrf_log.c
-      Include file:  util\nrf_log.h
-
    * Component: NordicSemiconductor::nRF_Libraries:nordic_common:4.0.0-2.alpha
 
-   * Component: NordicSemiconductor::nRF_Drivers:app_uart:Fifo:4.0.0-2.alpha
-      Include file:  uart\app_uart.h
-      Source file:   uart\app_uart_fifo.c
-
-   * Component: NordicSemiconductor::nRF_Libraries:app_util:default:4.0.0-2.alpha
+   * Component: NordicSemiconductor::nRF_Libraries:app_timer:default:4.0.0-2.alpha
+      Include file:  timer\app_timer.h
+      Source file:   timer\app_timer.c
 
    * Component: NordicSemiconductor::nRF_Libraries:app_fifo:4.0.0-2.alpha
       Include file:  fifo\app_fifo.h
       Source file:   fifo\app_fifo.c
 
+   * Component: NordicSemiconductor::nRF_Libraries:nrf_assert:4.0.0-2.alpha
+      Include file:  util\nrf_assert.h
+      Source file:   util\nrf_assert.c
+
    * Component: NordicSemiconductor::nRF_Libraries:retarget:4.0.0-2.alpha
       Source file:   uart\retarget.c
 
-   * Component: NordicSemiconductor::nRF_Libraries:app_timer:default:4.0.0-2.alpha
-      Include file:  timer\app_timer.h
-      Source file:   timer\app_timer.c
+   * Component: NordicSemiconductor::nRF_Libraries:nrf_log:default:4.0.0-2.alpha
+      Include file:  util\nrf_log.h
+      Source file:   util\nrf_log.c
+
+   * Component: NordicSemiconductor::nRF_Libraries:app_util:default:4.0.0-2.alpha
+
+   * Component: NordicSemiconductor::nRF_Drivers:app_uart:Fifo:4.0.0-2.alpha
+      Source file:   uart\app_uart_fifo.c
+      Include file:  uart\app_uart.h
 
    * Component: NordicSemiconductor::nRF_SoftDevice:Internal:sd_common:default:2.0.0-2.alpha
       Source file:   softdevice_handler\softdevice_handler.c
 
    * Component: NordicSemiconductor::nRF_SoftDevice:Internal:softdevice_present:2.0.0-2.alpha
 
-   * Component: NordicSemiconductor::nRF_SoftDevice:s130_hex:2.0.0-7.alpha
+   * Component: NordicSemiconductor::nRF_Libraries:segger_rtt:1.2.1-2.alpha
+      Source file:   segger_rtt\SEGGER_RTT.c
+      Source file:   segger_rtt\SEGGER_RTT_printf.c
+      Source file:   segger_rtt\RTT_Syscalls_KEIL.c
+      Include file:  segger_rtt\SEGGER_RTT.h
+      Include file:  segger_rtt\SEGGER_RTT_Conf.h
 
-   * Component: NordicSemiconductor::nRF_SoftDevice:s130:default:2.0.0-7.alpha
-      Include file:  headers\ble_gatt.h
-      Include file:  headers\nrf_sd_def.h
-      Include file:  headers\ble_hci.h
-      Include file:  headers\ble.h
-      Include file:  headers\nrf_error_soc.h
-      Include file:  headers\nrf_soc.h
-      Include file:  headers\ble_gattc.h
-      Include file:  headers\nrf_svc.h
-      Include file:  headers\nrf_error.h
-      Include file:  headers\ble_l2cap.h
-      Include file:  headers\ble_gap.h
-      Include file:  headers\ble_gatts.h
-      Include file:  headers\nrf_error_sdm.h
-      Include file:  headers\nrf51\nrf_mbr.h
-      Include file:  headers\ble_types.h
-      Include file:  headers\ble_err.h
-      Include file:  headers\ble_ranges.h
-      Include file:  headers\softdevice_assert.h
-      Include file:  headers\nrf_sdm.h
+   * Component: NordicSemiconductor::Board Support:bsp:default:11.0.0-2.alpha
+      Source file:   bsp\bsp.c
+
+   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_advdata:4.0.0-2.alpha
+      Source file:   common\ble_advdata.c
+      Include file:  common\ble_advdata.h
+
+   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_common:4.0.0-2.alpha
+
+   * Component: NordicSemiconductor::Device:Startup:8.3.1
+      Include file:  Device\Include\system_nrf51.h
+      Source file:   Device\Source\system_nrf51.c
+      Source file:   Device\Source\arm\arm_startup_nrf51.s
+
+   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_conn_params:4.0.0-2.alpha
+      Source file:   common\ble_conn_params.c
+      Include file:  common\ble_conn_params.h
+
+   * Component: NordicSemiconductor::nRF_BLE:BLE_Modules:ble_service_common:4.0.0-2.alpha
+      Source file:   common\ble_srv_common.c
+      Include file:  common\ble_srv_common.h
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
