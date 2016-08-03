@@ -26,3 +26,15 @@ custom_board.h goes in the C:\Keil_v5\ARM\Pack\NordicSemiconductor\nRF_Examples\
 Uses the soft device s130v1 firmware
 
 Device is programmed with the softdevice first, then the application is loaded
+
+# What's it do?
+
+The badge, when powered on, will run in one of 5 modes.
+
+Mode 1 - 'Knight Rider' pattern
+Mode 2 - Alternating red eyes
+Mode 3 - Color strobe eyes
+Mode 4 - Battery indicator - voltage as a percentage of 3.7V.  Each pair lit is 20%, flashing means 10% instead - add the pairs together to get percentage (increases to the right)
+Mode 5 - Randomly firing orange LEDs
+
+In all modes the bluetooth stack is working as an Eddystone, which broadcasts a URL every 100ms.  Newer phones will automatically see the URL and display a notification for it.
