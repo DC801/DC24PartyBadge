@@ -1,5 +1,7 @@
 --cpu Cortex-M0
 ".\_build\main.o"
+".\_build\led_patterns.o"
+".\_build\bluetooth.o"
 ".\_build\bsp.o"
 ".\_build\arm_startup_nrf51.o"
 ".\_build\system_nrf51.o"

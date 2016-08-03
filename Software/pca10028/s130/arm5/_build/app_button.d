@@ -23,7 +23,7 @@
 .\_build\app_button.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.alpha\gpiote\nrf_drv_gpiote.h
 .\_build\app_button.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.alpha\hal\nrf_gpiote.h
 .\_build\app_button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\_build\app_button.o: C:\Users\Andrew\Documents\ble_peripheral\DC801_DC24PartyBadge\Software\pca10028\s130\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
+.\_build\app_button.o: C:\Users\hamster\Documents\Development\DC801_DC24PartyBadge\Software\pca10028\s130\arm5\RTE\nRF_Drivers\nRF51422_xxAC\nrf_drv_config.h
 .\_build\app_button.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Drivers\4.0.0-2.alpha\config\nrf_drv_config_validation.h
 .\_build\app_button.o: RTE\nRF_Libraries\nRF51422_xxAC\nrf_assert.h
 .\_build\app_button.o: C:\Keil_v5\ARM\PACK\NordicSemiconductor\nRF_Libraries\4.0.0-2.alpha\util\sdk_common.h
